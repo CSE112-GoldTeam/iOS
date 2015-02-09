@@ -37,6 +37,9 @@
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="265" y="550" width="271" height="50"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="i4p-fU-JDE" kind="show" id="bEv-oC-qBV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Gold Team!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvJ-PS-itj">
                                 <rect key="frame" x="254" y="28" width="234" height="61"/>

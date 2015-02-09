@@ -13,6 +13,7 @@
 		94A9A9121A80671D0090935E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9111A80671D0090935E /* Images.xcassets */; };
 		94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9131A80671D0090935E /* LaunchScreen.xib */; };
 		94A9A9211A80671D0090935E /* RoboBettyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A9201A80671D0090935E /* RoboBettyTests.swift */; };
+		D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */; };
 		F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */ = {isa = PBXBuildFile; fileRef = F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */; };
 		F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		94A9A91A1A80671D0090935E /* RoboBettyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboBettyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A9A91F1A80671D0090935E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A9A9201A80671D0090935E /* RoboBettyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboBettyTests.swift; sourceTree = "<group>"; };
+		D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DontHaveAppointmentViewController.swift; sourceTree = "<group>"; };
 		F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-wreath-md.png"; sourceTree = "<group>"; };
 		F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
 				94A9A90C1A80671D0090935E /* ViewController.swift */,
 				94A9A90E1A80671D0090935E /* Main.storyboard */,
+				D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */,
 				94A9A9111A80671D0090935E /* Images.xcassets */,
 				94A9A9131A80671D0090935E /* LaunchScreen.xib */,
 				F506D8091A896FC200BA3A47 /* images */,
@@ -230,6 +233,7 @@
 				94A9A90D1A80671D0090935E /* ViewController.swift in Sources */,
 				F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */,
 				94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */,
+				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
