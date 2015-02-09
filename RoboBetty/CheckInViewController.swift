@@ -11,6 +11,8 @@ import UIKit
 class CheckInViewController: UIViewController {
 
     @IBOutlet weak var codeInstruction: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

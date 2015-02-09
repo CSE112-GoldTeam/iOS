@@ -194,6 +194,18 @@
                                     <segue destination="jtj-SA-zOh" kind="show" id="bMh-rS-f4r"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZl-qc-xLC">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="537" y="496" width="75" height="42"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="UHd-sL-RMe" kind="show" id="LW7-Lf-Uxp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -205,6 +217,7 @@
                                 <exclude reference="2a8-H1-TUT"/>
                                 <exclude reference="RtD-sk-OOe"/>
                                 <exclude reference="FZa-M9-KYZ"/>
+                                <exclude reference="RZl-qc-xLC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -216,16 +229,35 @@
                                 <include reference="2a8-H1-TUT"/>
                                 <include reference="RtD-sk-OOe"/>
                                 <include reference="FZa-M9-KYZ"/>
+                                <include reference="RZl-qc-xLC"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="codeInstruction" destination="EAX-k7-8t5" id="PdE-3B-qlQ"/>
+                        <outlet property="nextButton" destination="RZl-qc-xLC" id="faX-lB-sgR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0i-CV-2F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1761" y="334"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eO7-Nk-LlZ">
+            <objects>
+                <viewController id="UHd-sL-RMe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HXh-a9-xur"/>
+                        <viewControllerLayoutGuide type="bottom" id="55H-Wy-eTB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6m2-zd-rcD">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLJ-Xf-dWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2448" y="334"/>
         </scene>
         <!--No Confirmation Code View Controller-->
         <scene sceneID="JI9-da-izk">
