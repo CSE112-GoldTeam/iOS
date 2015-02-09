@@ -16,6 +16,7 @@
 		D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */; };
 		F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */ = {isa = PBXBuildFile; fileRef = F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */; };
 		F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */; };
+		F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DontHaveAppointmentViewController.swift; sourceTree = "<group>"; };
 		F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-wreath-md.png"; sourceTree = "<group>"; };
 		F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoConfirmationCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		94A9A9071A80671D0090935E /* RoboBetty */ = {
 			isa = PBXGroup;
 			children = (
+				F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */,
 				F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */,
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
 				94A9A90C1A80671D0090935E /* ViewController.swift */,
@@ -234,6 +237,7 @@
 				F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */,
 				94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */,
 				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
+				F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
