@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         checkInButton.layer.borderColor = UIColor.whiteColor().CGColor
         checkInButton.layer.cornerRadius = 5
         checkInButton.layer.borderWidth = 1
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib
     }
 
     override func didReceiveMemoryWarning() {
