@@ -12,6 +12,7 @@ class DontHaveAppointmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set title
         self.title = "Don't Have An Appointment?"
     }
 
