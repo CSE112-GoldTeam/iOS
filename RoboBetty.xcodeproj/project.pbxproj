@@ -13,6 +13,7 @@
 		94A9A9121A80671D0090935E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9111A80671D0090935E /* Images.xcassets */; };
 		94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9131A80671D0090935E /* LaunchScreen.xib */; };
 		94A9A9211A80671D0090935E /* RoboBettyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A9201A80671D0090935E /* RoboBettyTests.swift */; };
+		F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */ = {isa = PBXBuildFile; fileRef = F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		94A9A91A1A80671D0090935E /* RoboBettyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboBettyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A9A91F1A80671D0090935E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A9A9201A80671D0090935E /* RoboBettyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboBettyTests.swift; sourceTree = "<group>"; };
+		F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-wreath-md.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		94A9A9071A80671D0090935E /* RoboBetty */ = {
 			isa = PBXGroup;
 			children = (
+				F506D8091A896FC200BA3A47 /* images */,
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
 				94A9A90C1A80671D0090935E /* ViewController.swift */,
 				94A9A90E1A80671D0090935E /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				94A9A91F1A80671D0090935E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F506D8091A896FC200BA3A47 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A9A9101A80671D0090935E /* Main.storyboard in Resources */,
+				F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */,
 				94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */,
 				94A9A9121A80671D0090935E /* Images.xcassets in Resources */,
 			);
@@ -339,6 +351,7 @@
 				INFOPLIST_FILE = RoboBetty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -349,6 +362,7 @@
 				INFOPLIST_FILE = RoboBetty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -405,6 +419,7 @@
 				94A9A9261A80671D0090935E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94A9A9271A80671D0090935E /* Build configuration list for PBXNativeTarget "RoboBettyTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +428,7 @@
 				94A9A9291A80671D0090935E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
