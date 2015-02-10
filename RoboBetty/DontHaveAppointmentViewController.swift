@@ -13,7 +13,6 @@ class DontHaveAppointmentViewController: UIViewController {
     @IBOutlet var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //done button changes
         doneButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
         doneButton.layer.cornerRadius = 5
