@@ -31,9 +31,6 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         doneButton.layer.cornerRadius = 5
         doneButton.layer.borderWidth = 1
         
-        // set title
-        self.title = "Don't Have An Appointment?"
-        
         datePicker.datePickerMode = UIDatePickerMode.Date
         dateOfBirthTextField.inputView = datePicker
         //datePicker.hidden = true
@@ -41,6 +38,9 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = false
+        // set title
+        self.title = "Don't Have An Appointment?"
         firstNameTextField.text = ""
         lastNameTextField.text = ""
     }

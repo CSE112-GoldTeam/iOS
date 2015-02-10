@@ -10,10 +10,19 @@ import UIKit
 
 class ThankYouViewController: UIViewController {
 
+    @IBOutlet var okButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        okButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
+        okButton.layer.borderColor = UIColor.whiteColor().CGColor
+        okButton.layer.cornerRadius = 5
+        okButton.layer.borderWidth = 1
         // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {

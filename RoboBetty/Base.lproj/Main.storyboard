@@ -470,6 +470,7 @@
                         <viewControllerLayoutGuide type="bottom" id="znY-9m-zBm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5H1-HB-Ccp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait, someone will be with you shortly." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciO-Md-fL2">
@@ -487,24 +488,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="358" y="425" width="85" height="21"/>
+                                    <rect key="frame" x="358" y="304" width="85" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxM-Eo-me5">
+                                <rect key="frame" x="302" y="114" width="132" height="34"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="311" y="408" width="178" height="51"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="5zo-6v-9NB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ciO-Md-fL2"/>
                                 <exclude reference="603-iZ-qz1"/>
+                                <exclude reference="ZxM-Eo-me5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="subviews">
                                 <include reference="ciO-Md-fL2"/>
                                 <include reference="603-iZ-qz1"/>
+                                <include reference="ZxM-Eo-me5"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="okButton" destination="ZxM-Eo-me5" id="FUt-St-3CS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kt1-tj-nKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -532,4 +551,7 @@
     <resources>
         <image name="gold-wreath-md.png" width="298" height="285"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5zo-6v-9NB"/>
+    </inferredMetricsTieBreakers>
 </document>
