@@ -10,10 +10,17 @@ import UIKit
 
 class IncompleteFormsViewController: UIViewController {
 
+    @IBOutlet var topBorder: UILabel!
+    @IBOutlet var bottomBorder: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        topBorder.layer.borderColor = UIColor.blackColor().CGColor
+        topBorder.layer.borderWidth = 1.0
+        
+        bottomBorder.layer.borderColor = UIColor.blackColor().CGColor
+        bottomBorder.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {
