@@ -799,6 +799,7 @@
                         <viewControllerLayoutGuide type="bottom" id="znY-9m-zBm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5H1-HB-Ccp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait, someone will be with you shortly." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciO-Md-fL2">
