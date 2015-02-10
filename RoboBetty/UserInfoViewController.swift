@@ -1,6 +1,6 @@
 //
 //  UserInfoViewController.swift
-//  RoboBetty
+//  RoboBetty 
 //
 //  Created by Mike Griffin on 2/9/15.
 //  Copyright (c) 2015 CSE112-GoldTeam. All rights reserved.
