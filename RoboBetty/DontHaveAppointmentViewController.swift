@@ -14,18 +14,16 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var dateOfBirthTextField: UITextField!
-    var datePicker: UIDatePicker = UIDatePicker()
     
     override func viewDidLoad() {
+        let backItem = UIBarButtonItem(title: "Back", style: .Bordered, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
+        
         super.viewDidLoad()
         doneButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
         doneButton.layer.cornerRadius = 5
         doneButton.layer.borderWidth = 1
-        
-        datePicker.datePickerMode = UIDatePickerMode.Date
-        dateOfBirthTextField.inputView = datePicker
-        //datePicker.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
