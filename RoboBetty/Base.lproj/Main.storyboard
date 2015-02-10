@@ -190,12 +190,15 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dateOfBirthTextField" destination="JFI-0g-TgF" id="2LS-VO-IUc"/>
                         <outlet property="doneButton" destination="b6k-sP-ACd" id="oBE-oq-5pW"/>
+                        <outlet property="firstNameTextField" destination="UnK-hS-NSy" id="330-8G-Fml"/>
+                        <outlet property="lastNameTextField" destination="gEd-TJ-Roj" id="z0W-5M-Fad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mtm-XN-7iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038.75" y="1106"/>
+            <point key="canvasLocation" x="1038.75" y="1100"/>
         </scene>
         <!--Check In View Controller-->
         <scene sceneID="EQr-UA-b8u">
