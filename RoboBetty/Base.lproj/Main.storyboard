@@ -161,6 +161,9 @@
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="332" y="419" width="178" height="51"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="FBR-be-4zY" kind="show" id="Rr7-jY-kOJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -786,6 +789,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsH-8R-cLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1757.25" y="1106"/>
+        </scene>
+        <!--Thank You View Controller-->
+        <scene sceneID="a5k-IJ-rCc">
+            <objects>
+                <viewController id="FBR-be-4zY" customClass="ThankYouViewController" customModule="RoboBetty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PgV-ng-WJH"/>
+                        <viewControllerLayoutGuide type="bottom" id="znY-9m-zBm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5H1-HB-Ccp">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait, someone will be with you shortly." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciO-Md-fL2">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="225" y="235" width="351" height="41"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="603-iZ-qz1">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="358" y="425" width="85" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ciO-Md-fL2"/>
+                                <exclude reference="603-iZ-qz1"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="ciO-Md-fL2"/>
+                                <include reference="603-iZ-qz1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kt1-tj-nKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423.5" y="1896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O12-Vs-RSA">
