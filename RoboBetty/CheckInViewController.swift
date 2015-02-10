@@ -18,6 +18,12 @@ class CheckInViewController: UIViewController {
         super.viewDidLoad()
 
         codeInstruction.alpha = 0.5
+        
+        nextButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
+        nextButton.layer.borderColor = UIColor.whiteColor().CGColor
+        nextButton.layer.cornerRadius = 5
+        nextButton.layer.borderWidth = 1
+        
         // Do any additional setup after loading the view.
     }
 
