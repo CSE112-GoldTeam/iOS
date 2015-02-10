@@ -14,15 +14,7 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var dateOfBirthTextField: UITextField!
-    //@IBOutlet var picker: UIPickerView? = UIPickerView()
     var datePicker: UIDatePicker = UIDatePicker()
-    
-    /*var months = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"]
-    
-    var days = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
-    "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25",
-    "26", "27", "28", "29", "30", "31"]*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,15 +51,4 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         }
         return true
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
