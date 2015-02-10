@@ -171,7 +171,7 @@
                                     <rect key="frame" x="332" y="419" width="178" height="51"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="FBR-be-4zY" kind="show" id="Rr7-jY-kOJ"/>
+                                    <action selector="doneBtnPressed:" destination="i4p-fU-JDE" eventType="touchUpInside" id="0aU-qe-f5m"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QbW-z6-blv">
@@ -180,7 +180,7 @@
                                     <!--2015-02-10 03:03:47 +0000-->
                                 </date>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="117" y="584" width="567" height="216"/>
+                                    <rect key="frame" x="138" y="584" width="567" height="216"/>
                                 </variation>
                             </datePicker>
                         </subviews>
@@ -222,6 +222,7 @@
                         <outlet property="doneButton" destination="b6k-sP-ACd" id="oBE-oq-5pW"/>
                         <outlet property="firstNameTextField" destination="UnK-hS-NSy" id="WKm-ER-OUV"/>
                         <outlet property="lastNameTextField" destination="gEd-TJ-Roj" id="bqp-7r-d7m"/>
+                        <segue destination="FBR-be-4zY" kind="show" identifier="Done" id="8s3-wW-zBH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mtm-XN-7iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -884,10 +885,16 @@
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="346" y="424" width="178" height="51"/>
                                 </variation>
-                                <connections>
-                                    <segue destination="UHd-sL-RMe" kind="show" id="ItN-Gg-meU"/>
-                                </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-kp-rqU">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="445230227.97022098">
+                                    <!--2015-02-10 03:03:47 +0000-->
+                                </date>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="132" y="584" width="567" height="216"/>
+                                </variation>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -900,6 +907,7 @@
                                 <exclude reference="SKU-NX-gCE"/>
                                 <exclude reference="vGg-CE-Bnh"/>
                                 <exclude reference="5j6-5K-izc"/>
+                                <exclude reference="CBA-kp-rqU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -914,9 +922,19 @@
                                 <include reference="5j6-5K-izc"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="CBA-kp-rqU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="dateOfBirthTextField" destination="SKU-NX-gCE" id="PBW-aU-kGL"/>
+                        <outlet property="datePicker" destination="CBA-kp-rqU" id="srF-xI-3oI"/>
                         <outlet property="doneBtn" destination="5j6-5K-izc" id="8mV-ax-cyB"/>
+                        <outlet property="firstNameTextField" destination="vGg-CE-Bnh" id="Ybh-Ar-Eox"/>
+                        <outlet property="lastNameTextField" destination="iLa-xi-2TU" id="6LI-CV-EfC"/>
+                        <segue destination="UHd-sL-RMe" kind="show" identifier="Done" id="x6e-bZ-IPJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsH-8R-cLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1016,7 +1034,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rfH-1S-iTh"/>
-        <segue reference="Rr7-jY-kOJ"/>
-        <segue reference="LW7-Lf-Uxp"/>
+        <segue reference="8s3-wW-zBH"/>
+        <segue reference="x6e-bZ-IPJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,7 +30,6 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         
         datePicker.datePickerMode = UIDatePickerMode.Date
         datePicker.hidden = true
-        datePicker.maximumDate = NSDate()
         datePicker.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
         
         dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -65,5 +64,24 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
     func handleDatePicker(sender: UIDatePicker) {
         dateInLabel = sender.date
         dateOfBirthTextField.text = dateFormatter.stringFromDate(dateInLabel)
+    }
+    
+    @IBAction func doneBtnPressed(sender: AnyObject){
+        var alert: UIAlertView!
+        if(firstNameTextField.text == ""){
+            alert = UIAlertView(title: "ERROR", message: "Please Type Your First Name", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else if(lastNameTextField.text == ""){
+            alert = UIAlertView(title: "ERROR", message: "Please Type Your Last Name", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else if(dateOfBirthTextField.text == ""){
+            alert = UIAlertView(title: "ERROR", message: "Please Enter Your Birth Date", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else{
+            performSegueWithIdentifier("Done", sender: self)
+        }
     }
 }
