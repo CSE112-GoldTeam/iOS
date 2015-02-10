@@ -21,7 +21,7 @@ class DontHaveAppointmentViewController: UIViewController {
         // set title
         self.title = "Don't Have An Appointment?"
         
-        // changes back button name to "Back" in Thank You screen
+        // changes back button name to "Back" in Thank You screens
         let backItem = UIBarButtonItem(title: "Back", style: .Bordered, target: nil, action: nil)
         navigationItem.backBarButtonItem = backItem
     }
