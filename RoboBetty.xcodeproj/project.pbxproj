@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */; };
 		94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90A1A80671D0090935E /* AppDelegate.swift */; };
 		94A9A90D1A80671D0090935E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90C1A80671D0090935E /* ViewController.swift */; };
 		94A9A9101A80671D0090935E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A90E1A80671D0090935E /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		94A9A9051A80671D0090935E /* RoboBetty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBetty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A9A9091A80671D0090935E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A9A90A1A80671D0090935E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		94A9A9071A80671D0090935E /* RoboBetty */ = {
 			isa = PBXGroup;
 			children = (
+				7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */,
 				F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */,
 				F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */,
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A9A90D1A80671D0090935E /* ViewController.swift in Sources */,
+				7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */,
 				F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */,
 				94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */,
 				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
