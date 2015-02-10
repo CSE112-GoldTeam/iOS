@@ -10,8 +10,14 @@ import UIKit
 
 class DontHaveAppointmentViewController: UIViewController {
 
+    @IBOutlet var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        doneButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
+        doneButton.layer.borderColor = UIColor.whiteColor().CGColor
+        doneButton.layer.cornerRadius = 5
+        doneButton.layer.borderWidth = 1
+        
         // set title
         self.title = "Don't Have An Appointment?"
     }
