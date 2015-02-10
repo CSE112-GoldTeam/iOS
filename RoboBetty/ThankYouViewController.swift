@@ -22,7 +22,7 @@ class ThankYouViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.navigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
