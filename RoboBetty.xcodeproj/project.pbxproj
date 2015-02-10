@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0B7E0F1A898FC7003D8C62 /* IncompleteFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */; };
+		7F0B7E111A8992E2003D8C62 /* Form.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0B7E101A8992E2003D8C62 /* Form.png */; };
+		7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */; };
 		7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */; };
 		94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90A1A80671D0090935E /* AppDelegate.swift */; };
 		94A9A90D1A80671D0090935E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90C1A80671D0090935E /* ViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompleteFormsViewController.swift; sourceTree = "<group>"; };
+		7F0B7E101A8992E2003D8C62 /* Form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Form.png; path = ../../../Desktop/Form.png; sourceTree = "<group>"; };
+		7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedFormsViewController.swift; sourceTree = "<group>"; };
 		7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		94A9A9051A80671D0090935E /* RoboBetty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBetty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A9A9091A80671D0090935E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,9 +93,11 @@
 		94A9A9071A80671D0090935E /* RoboBetty */ = {
 			isa = PBXGroup;
 			children = (
+				7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */,
 				7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */,
 				F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */,
 				F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */,
+				7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */,
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
 				94A9A90C1A80671D0090935E /* ViewController.swift */,
 				94A9A90E1A80671D0090935E /* Main.storyboard */,
@@ -130,6 +138,7 @@
 		F506D8091A896FC200BA3A47 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7F0B7E101A8992E2003D8C62 /* Form.png */,
 				F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */,
 			);
 			name = images;
@@ -217,6 +226,7 @@
 			files = (
 				94A9A9101A80671D0090935E /* Main.storyboard in Resources */,
 				F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */,
+				7F0B7E111A8992E2003D8C62 /* Form.png in Resources */,
 				94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */,
 				94A9A9121A80671D0090935E /* Images.xcassets in Resources */,
 			);
@@ -236,10 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */,
 				94A9A90D1A80671D0090935E /* ViewController.swift in Sources */,
 				7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */,
 				F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */,
 				94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */,
+				7F0B7E0F1A898FC7003D8C62 /* IncompleteFormsViewController.swift in Sources */,
 				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
 				F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */,
 			);
