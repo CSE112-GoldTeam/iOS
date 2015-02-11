@@ -9,14 +9,43 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     var window: UIWindow?
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        NSNotificationCenter.defaultCenter().addObserver( self, selector: "appLoggedIn", name: RBAPILoggedInNotificationKey, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector: "appLoggedOut", name: RBAPILoggedOutNotificationKey, object: nil )
+        
+        if RBAPIManager.manager.isLoggedIn()
+        {
+            
+        }
+        else
+        {
+            let loginViewController = RBLoginViewController( splash: false )
+            window?.rootViewController = loginViewController
+        }
+        
         return true
+    }
+    
+    func appLoggedIn()
+    {
+        let storyboard = UIStoryboard( name: "Main", bundle: nil )
+        let mainViewController = storyboard.instantiateInitialViewController() as UIViewController
+        window?.rootViewController = mainViewController
+        
+        UIView.transitionWithView( window!, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {}, completion: nil )
+    }
+    
+    func appLoggedOut()
+    {
+        let loginViewController = RBLoginViewController( splash: false )
+        window?.rootViewController = loginViewController
+        
+        UIView.transitionWithView( window!, duration: 0.2, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {}, completion: nil )
     }
 
     func applicationWillResignActive(application: UIApplication) {

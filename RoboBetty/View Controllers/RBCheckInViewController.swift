@@ -8,28 +8,21 @@
 
 import UIKit
 
-class RBCheckInViewController: UIViewController {
-
-
+class RBCheckInViewController: UIViewController
+{
     @IBOutlet weak var checkInButton: UIButton!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        checkInButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
+        checkInButton.backgroundColor = UIColor.grayColor()
         checkInButton.layer.borderColor = UIColor.whiteColor().CGColor
-        checkInButton.layer.cornerRadius = 5
         checkInButton.layer.borderWidth = 1
-        // Do any additional setup after loading the view, typically from a nib
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear( animated: Bool )
+    {
+        super.viewWillAppear( animated )
         self.navigationController?.navigationBarHidden = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-

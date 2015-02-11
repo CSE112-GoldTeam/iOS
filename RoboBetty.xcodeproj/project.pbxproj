@@ -11,6 +11,12 @@
 		7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */; };
 		7F0B7E151A899B42003D8C62 /* Form.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0B7E141A899B42003D8C62 /* Form.png */; };
 		7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */; };
+		9404B32E1A8B0DE700A26DDA /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9404B32D1A8B0DE700A26DDA /* RBTextField.swift */; };
+		9404B3301A8B1B8000A26DDA /* RBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9404B32F1A8B1B8000A26DDA /* RBConstants.swift */; };
+		9445B96E1A8B06560081ACC0 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9445B9661A8B06560081ACC0 /* ALView+PureLayout.m */; };
+		9445B96F1A8B06560081ACC0 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9445B9681A8B06560081ACC0 /* NSArray+PureLayout.m */; };
+		9445B9701A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9445B96A1A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.m */; };
+		9445B9751A8B06BE0081ACC0 /* RBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9445B9741A8B06BE0081ACC0 /* RBAPIManager.swift */; };
 		947F7EF61A8AFEBF0031D7D4 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */; };
 		947F7EF81A8B00870031D7D4 /* RBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F7EF71A8B00870031D7D4 /* RBLoginViewController.swift */; };
 		94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90A1A80671D0090935E /* AppDelegate.swift */; };
@@ -41,6 +47,19 @@
 		7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedFormsViewController.swift; sourceTree = "<group>"; };
 		7F0B7E141A899B42003D8C62 /* Form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Form.png; sourceTree = "<group>"; };
 		7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		9404B32D1A8B0DE700A26DDA /* RBTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
+		9404B32F1A8B1B8000A26DDA /* RBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBConstants.swift; sourceTree = "<group>"; };
+		9445B9651A8B06560081ACC0 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		9445B9661A8B06560081ACC0 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		9445B9671A8B06560081ACC0 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		9445B9681A8B06560081ACC0 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		9445B9691A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		9445B96A1A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		9445B96B1A8B06560081ACC0 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		9445B96C1A8B06560081ACC0 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		9445B96D1A8B06560081ACC0 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		9445B9741A8B06BE0081ACC0 /* RBAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBAPIManager.swift; sourceTree = "<group>"; };
+		9445B9761A8B09ED0081ACC0 /* RoboBetty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RoboBetty-Bridging-Header.h"; sourceTree = "<group>"; };
 		947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		947F7EF71A8B00870031D7D4 /* RBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBLoginViewController.swift; sourceTree = "<group>"; };
 		94A9A9051A80671D0090935E /* RoboBetty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBetty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,10 +97,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9404B32C1A8B0DB300A26DDA /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				9404B32D1A8B0DE700A26DDA /* RBTextField.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		9445B9641A8B06560081ACC0 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				9445B9651A8B06560081ACC0 /* ALView+PureLayout.h */,
+				9445B9661A8B06560081ACC0 /* ALView+PureLayout.m */,
+				9445B9671A8B06560081ACC0 /* NSArray+PureLayout.h */,
+				9445B9681A8B06560081ACC0 /* NSArray+PureLayout.m */,
+				9445B9691A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.h */,
+				9445B96A1A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.m */,
+				9445B96B1A8B06560081ACC0 /* PureLayout+Internal.h */,
+				9445B96C1A8B06560081ACC0 /* PureLayout.h */,
+				9445B96D1A8B06560081ACC0 /* PureLayoutDefines.h */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		9445B9711A8B06620081ACC0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9445B9741A8B06BE0081ACC0 /* RBAPIManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		947F7EF41A8AFEA50031D7D4 /* External */ = {
 			isa = PBXGroup;
 			children = (
 				947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */,
+				9445B9641A8B06560081ACC0 /* PureLayout */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -123,12 +175,16 @@
 		94A9A9071A80671D0090935E /* RoboBetty */ = {
 			isa = PBXGroup;
 			children = (
+				9404B32C1A8B0DB300A26DDA /* Layout */,
+				9445B9711A8B06620081ACC0 /* Managers */,
 				947F7EF91A8B009D0031D7D4 /* View Controllers */,
 				947F7EF41A8AFEA50031D7D4 /* External */,
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
+				9404B32F1A8B1B8000A26DDA /* RBConstants.swift */,
 				94A9A90E1A80671D0090935E /* Main.storyboard */,
 				94A9A9111A80671D0090935E /* Images.xcassets */,
 				94A9A9131A80671D0090935E /* LaunchScreen.xib */,
+				9445B9761A8B09ED0081ACC0 /* RoboBetty-Bridging-Header.h */,
 				F506D8091A896FC200BA3A47 /* images */,
 				94A9A9081A80671D0090935E /* Supporting Files */,
 			);
@@ -278,9 +334,15 @@
 				D348057A1A89939600B97424 /* ThankYouViewController.swift in Sources */,
 				94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */,
 				947F7EF61A8AFEBF0031D7D4 /* Alamofire.swift in Sources */,
+				9445B9701A8B06560081ACC0 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				9404B3301A8B1B8000A26DDA /* RBConstants.swift in Sources */,
+				9445B96E1A8B06560081ACC0 /* ALView+PureLayout.m in Sources */,
+				9404B32E1A8B0DE700A26DDA /* RBTextField.swift in Sources */,
+				9445B9751A8B06BE0081ACC0 /* RBAPIManager.swift in Sources */,
 				7F0B7E0F1A898FC7003D8C62 /* IncompleteFormsViewController.swift in Sources */,
 				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
 				F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */,
+				9445B96F1A8B06560081ACC0 /* NSArray+PureLayout.m in Sources */,
 				947F7EF81A8B00870031D7D4 /* RBLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +469,7 @@
 				INFOPLIST_FILE = RoboBetty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RoboBetty/RoboBetty-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -418,6 +481,7 @@
 				INFOPLIST_FILE = RoboBetty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RoboBetty/RoboBetty-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

@@ -8,12 +8,13 @@
 
 import UIKit
 
-class IncompleteFormsViewController: UIViewController {
-
+class IncompleteFormsViewController: UIViewController
+{
     @IBOutlet var topBorder: UILabel!
     @IBOutlet var bottomBorder: UILabel!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         topBorder.layer.borderColor = UIColor.blackColor().CGColor
@@ -22,21 +23,4 @@ class IncompleteFormsViewController: UIViewController {
         bottomBorder.layer.borderColor = UIColor.blackColor().CGColor
         bottomBorder.layer.borderWidth = 1.0
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class CompletedFormsViewController: UIViewController {
-
+class CompletedFormsViewController: UIViewController
+{
     @IBOutlet weak var submitFormsButton: UIButton!
     @IBOutlet var topBorder: UILabel!
     @IBOutlet var bottomBorder: UILabel!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         submitFormsButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
@@ -28,21 +29,4 @@ class CompletedFormsViewController: UIViewController {
         bottomBorder.layer.borderColor = UIColor.blackColor().CGColor
         bottomBorder.layer.borderWidth = 1.0
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

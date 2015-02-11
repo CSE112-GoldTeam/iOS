@@ -8,8 +8,8 @@
 
 import UIKit
 
-class NoConfirmationCodeViewController: UIViewController {
-
+class NoConfirmationCodeViewController: UIViewController
+{
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var doneBtn: UIButton!
     @IBOutlet var lastNameTextField: UITextField!
@@ -18,7 +18,9 @@ class NoConfirmationCodeViewController: UIViewController {
     
     var dateFormatter = NSDateFormatter()
     var dateInLabel: NSDate!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         //let backItem = UIBarButtonItem(title: "Back", style: .Bordered, target: nil, action: nil)
         //navigationItem.backBarButtonItem = backItem
         
@@ -35,6 +37,7 @@ class NoConfirmationCodeViewController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         dateInLabel = NSDate()
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false
@@ -42,12 +45,7 @@ class NoConfirmationCodeViewController: UIViewController {
         lastNameTextField.text = ""
         dateOfBirthTextField.text = ""
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField == dateOfBirthTextField{
             dateOfBirthTextField.resignFirstResponder()
@@ -66,8 +64,10 @@ class NoConfirmationCodeViewController: UIViewController {
         dateOfBirthTextField.text = dateFormatter.stringFromDate(dateInLabel)
     }
     
-    @IBAction func doneBtnPressed(sender: AnyObject){
+    @IBAction func doneBtnPressed(sender: AnyObject)
+    {
         var alert: UIAlertView!
+        
         if(firstNameTextField.text == ""){
             alert = UIAlertView(title: "ERROR", message: "Please Type Your First Name", delegate: self, cancelButtonTitle: "OK")
             alert.show()
