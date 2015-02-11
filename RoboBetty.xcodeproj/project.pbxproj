@@ -11,8 +11,10 @@
 		7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */; };
 		7F0B7E151A899B42003D8C62 /* Form.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0B7E141A899B42003D8C62 /* Form.png */; };
 		7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */; };
+		947F7EF61A8AFEBF0031D7D4 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */; };
+		947F7EF81A8B00870031D7D4 /* RBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947F7EF71A8B00870031D7D4 /* RBLoginViewController.swift */; };
 		94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90A1A80671D0090935E /* AppDelegate.swift */; };
-		94A9A90D1A80671D0090935E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90C1A80671D0090935E /* ViewController.swift */; };
+		94A9A90D1A80671D0090935E /* RBCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A90C1A80671D0090935E /* RBCheckInViewController.swift */; };
 		94A9A9101A80671D0090935E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A90E1A80671D0090935E /* Main.storyboard */; };
 		94A9A9121A80671D0090935E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9111A80671D0090935E /* Images.xcassets */; };
 		94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9131A80671D0090935E /* LaunchScreen.xib */; };
@@ -39,10 +41,12 @@
 		7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedFormsViewController.swift; sourceTree = "<group>"; };
 		7F0B7E141A899B42003D8C62 /* Form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Form.png; sourceTree = "<group>"; };
 		7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		947F7EF71A8B00870031D7D4 /* RBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBLoginViewController.swift; sourceTree = "<group>"; };
 		94A9A9051A80671D0090935E /* RoboBetty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBetty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A9A9091A80671D0090935E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A9A90A1A80671D0090935E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94A9A90C1A80671D0090935E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94A9A90C1A80671D0090935E /* RBCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCheckInViewController.swift; sourceTree = "<group>"; };
 		94A9A90F1A80671D0090935E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94A9A9111A80671D0090935E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		94A9A9141A80671D0090935E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -74,6 +78,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		947F7EF41A8AFEA50031D7D4 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		947F7EF91A8B009D0031D7D4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */,
+				7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */,
+				F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */,
+				F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */,
+				7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */,
+				94A9A90C1A80671D0090935E /* RBCheckInViewController.swift */,
+				D34805791A89939600B97424 /* ThankYouViewController.swift */,
+				D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */,
+				947F7EF71A8B00870031D7D4 /* RBLoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		94A9A8FC1A80671D0090935E = {
 			isa = PBXGroup;
 			children = (
@@ -95,15 +123,9 @@
 		94A9A9071A80671D0090935E /* RoboBetty */ = {
 			isa = PBXGroup;
 			children = (
-				7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */,
-				7F65BBC71A898158002A0BC4 /* UserInfoViewController.swift */,
-				F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */,
-				F506D80C1A89767D00BA3A47 /* CheckInViewController.swift */,
-				7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */,
+				947F7EF91A8B009D0031D7D4 /* View Controllers */,
+				947F7EF41A8AFEA50031D7D4 /* External */,
 				94A9A90A1A80671D0090935E /* AppDelegate.swift */,
-				94A9A90C1A80671D0090935E /* ViewController.swift */,
-				D34805791A89939600B97424 /* ThankYouViewController.swift */,
-				D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */,
 				94A9A90E1A80671D0090935E /* Main.storyboard */,
 				94A9A9111A80671D0090935E /* Images.xcassets */,
 				94A9A9131A80671D0090935E /* LaunchScreen.xib */,
@@ -250,14 +272,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */,
-				94A9A90D1A80671D0090935E /* ViewController.swift in Sources */,
+				94A9A90D1A80671D0090935E /* RBCheckInViewController.swift in Sources */,
 				7F65BBC81A898158002A0BC4 /* UserInfoViewController.swift in Sources */,
 				F506D80D1A89767D00BA3A47 /* CheckInViewController.swift in Sources */,
 				D348057A1A89939600B97424 /* ThankYouViewController.swift in Sources */,
 				94A9A90B1A80671D0090935E /* AppDelegate.swift in Sources */,
+				947F7EF61A8AFEBF0031D7D4 /* Alamofire.swift in Sources */,
 				7F0B7E0F1A898FC7003D8C62 /* IncompleteFormsViewController.swift in Sources */,
 				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
 				F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */,
+				947F7EF81A8B00870031D7D4 /* RBLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +407,7 @@
 				INFOPLIST_FILE = RoboBetty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -394,7 +418,7 @@
 				INFOPLIST_FILE = RoboBetty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

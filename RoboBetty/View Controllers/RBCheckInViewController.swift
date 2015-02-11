@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RBCheckInViewController: UIViewController {
 
 
     @IBOutlet weak var checkInButton: UIButton!
