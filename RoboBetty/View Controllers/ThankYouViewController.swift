@@ -11,6 +11,8 @@ import UIKit
 class ThankYouViewController: UIViewController
 {
     @IBOutlet var okButton: UIButton!
+    @IBOutlet var pic: UIImageView!
+    @IBOutlet var background: UIImageView!
     
     override func viewDidLoad()
     {
@@ -19,10 +21,14 @@ class ThankYouViewController: UIViewController
         okButton.layer.borderColor = UIColor.whiteColor().CGColor
         okButton.layer.cornerRadius = 5
         okButton.layer.borderWidth = 1
+        
+        pic.image = UIImage(named: "gold-wreath-md.png")
+        //background.image = UIImage(named: "background")
     }
 
     override func viewWillAppear(animated: Bool)
     {
         self.navigationController?.navigationBarHidden = true
     }
+    
 }
