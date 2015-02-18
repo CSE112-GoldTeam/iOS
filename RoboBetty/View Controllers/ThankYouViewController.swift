@@ -12,18 +12,21 @@ class ThankYouViewController: UIViewController
 {
     @IBOutlet var okButton: UIButton!
     @IBOutlet var pic: UIImageView!
-    @IBOutlet var background: UIImageView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        okButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
+        /*okButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
         okButton.layer.borderColor = UIColor.whiteColor().CGColor
         okButton.layer.cornerRadius = 5
+        okButton.layer.borderWidth = 1*/
+        
+        okButton.backgroundColor = UIColor.grayColor()
+        okButton.layer.borderColor = UIColor.whiteColor().CGColor
         okButton.layer.borderWidth = 1
+
         
         pic.image = UIImage(named: "gold-wreath-md.png")
-        //background.image = UIImage(named: "background")
     }
 
     override func viewWillAppear(animated: Bool)

@@ -16,8 +16,6 @@ class CheckInViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        codeInstruction.alpha = 0.5
         
         /*nextButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
         nextButton.layer.borderColor = UIColor.whiteColor().CGColor
