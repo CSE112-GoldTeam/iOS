@@ -17,10 +17,6 @@ class CheckInViewController: UIViewController
     {
         super.viewDidLoad()
         
-        /*nextButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
-        nextButton.layer.borderColor = UIColor.whiteColor().CGColor
-        nextButton.layer.cornerRadius = 5
-        nextButton.layer.borderWidth = 1*/
         nextButton.backgroundColor = UIColor.grayColor()
         nextButton.layer.borderColor = UIColor.whiteColor().CGColor
         nextButton.layer.borderWidth = 1
@@ -30,5 +26,6 @@ class CheckInViewController: UIViewController
     override func viewWillAppear( animated: Bool )
     {
         self.navigationController?.navigationBarHidden = false
+        //self.navigationItem.title = "Check In"
     }
 }
