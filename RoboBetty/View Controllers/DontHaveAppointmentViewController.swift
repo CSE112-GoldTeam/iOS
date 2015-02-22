@@ -9,7 +9,7 @@
 import UIKit
 
 class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
-
+    
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
@@ -27,6 +27,7 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
         doneButton.layer.cornerRadius = 5
         doneButton.layer.borderWidth = 1
+        
         //picker
         datePicker.datePickerMode = UIDatePickerMode.Date
         datePicker.hidden = true
@@ -67,7 +68,7 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
     }
     
     @IBAction func doneBtnPressed(sender: AnyObject){
-        var alert: UIAlertView!
+        /*var alert: UIAlertView!
         if(firstNameTextField.text == ""){
             alert = UIAlertView(title: "ERROR", message: "Please Type Your First Name", delegate: self, cancelButtonTitle: "OK")
             alert.show()
@@ -80,8 +81,8 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
             alert = UIAlertView(title: "ERROR", message: "Please Enter Your Birth Date", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
-        else{
+        else{*/
             performSegueWithIdentifier("Done", sender: self)
-        }
+        //}
     }
 }
