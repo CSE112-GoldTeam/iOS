@@ -21,7 +21,6 @@ class CheckInViewController: UIViewController
         nextButton.layer.borderColor = UIColor.whiteColor().CGColor
         nextButton.layer.cornerRadius = 5
         nextButton.layer.borderWidth = 1*/
-        
         nextButton.backgroundColor = UIColor.grayColor()
         nextButton.layer.borderColor = UIColor.whiteColor().CGColor
         nextButton.layer.borderWidth = 1
