@@ -126,6 +126,7 @@ class RBLoginViewController: UIViewController
         usernameField.autoSetDimension( ALDimension.Height, toSize: 40.0 )
         
         passwordField = RBTextField()
+        passwordField.secureTextEntry = true // hides password as you type in launch screen
         passwordField.font = RBConstants.primaryFont( 18.0 )
         passwordField.placeholder = "Password"
         passwordField.textColor = UIColor.blackColor()
