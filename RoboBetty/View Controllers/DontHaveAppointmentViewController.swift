@@ -27,7 +27,6 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
         doneButton.layer.cornerRadius = 5
         doneButton.layer.borderWidth = 1
-        
         //picker
         datePicker.datePickerMode = UIDatePickerMode.Date
         datePicker.hidden = true
