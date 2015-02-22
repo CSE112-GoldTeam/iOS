@@ -12,19 +12,25 @@ class ThankYouViewController: UIViewController
 {
     @IBOutlet var okButton: UIButton!
     @IBOutlet var pic: UIImageView!
+    @IBOutlet var topLabel: UILabel!
+    @IBOutlet var bottomLabel: UILabel!
+    
+    var previous:String = ""
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        /*okButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
-        okButton.layer.borderColor = UIColor.whiteColor().CGColor
-        okButton.layer.cornerRadius = 5
-        okButton.layer.borderWidth = 1*/
-        
         okButton.backgroundColor = UIColor.grayColor()
         okButton.layer.borderColor = UIColor.whiteColor().CGColor
         okButton.layer.borderWidth = 1
-
+        
+        if(previous == "No Appointment"){
+            topLabel.text = "Please wait, someone will be with you shortly."
+            bottomLabel.hidden = false
+        }
+        else{
+            bottomLabel.hidden = true
+        }
         
         pic.image = UIImage(named: "gold-wreath-md.png")
     }
@@ -33,5 +39,4 @@ class ThankYouViewController: UIViewController
     {
         self.navigationController?.navigationBarHidden = true
     }
-    
 }

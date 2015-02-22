@@ -83,6 +83,13 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         }
         else{*/
             performSegueWithIdentifier("Done", sender: self)
+            
         //}
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "Done"){
+            var destinationVC:ThankYouViewController = segue.destinationViewController as ThankYouViewController
+            destinationVC.previous = "No Appointment"
+        }
     }
 }
