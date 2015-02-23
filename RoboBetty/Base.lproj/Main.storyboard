@@ -635,6 +635,15 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gold Team!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7S-1M-6Yw">
+                                <rect key="frame" x="254" y="28" width="234" height="61"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="230" y="77" width="340" height="60"/>
+                                </variation>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold-wreath-md.png" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-H1-TUT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -719,15 +728,6 @@
                                     <segue destination="UHd-sL-RMe" kind="show" id="LW7-Lf-Uxp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Gold Team!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7S-1M-6Yw">
-                                <rect key="frame" x="254" y="28" width="234" height="61"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="230" y="77" width="340" height="60"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -737,7 +737,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="5"/>
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="2a8-H1-TUT" secondAttribute="centerY" constant="65" id="Qiz-PI-iBm">
-                                <variation key="heightClass=regular-widthClass=regular" constant="68"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstItem="CUE-54-Idp" firstAttribute="top" secondItem="67L-3c-gSR" secondAttribute="top" id="RDS-jy-zuD"/>
                             <constraint firstItem="CUE-54-Idp" firstAttribute="centerX" secondItem="2a8-H1-TUT" secondAttribute="centerX" id="Uh8-uE-l9J"/>
@@ -769,11 +769,11 @@
                             <mask key="subviews">
                                 <exclude reference="CUE-54-Idp"/>
                                 <exclude reference="LIP-2p-mbu"/>
+                                <exclude reference="s7S-1M-6Yw"/>
                                 <exclude reference="2a8-H1-TUT"/>
                                 <exclude reference="cAV-j3-ejE"/>
                                 <exclude reference="zPz-WQ-tPE"/>
                                 <exclude reference="RZl-qc-xLC"/>
-                                <exclude reference="s7S-1M-6Yw"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6Bt-iQ-gqc"/>
@@ -798,10 +798,10 @@
                         <variation key="widthClass=regular">
                             <mask key="subviews">
                                 <include reference="LIP-2p-mbu"/>
+                                <include reference="s7S-1M-6Yw"/>
                                 <include reference="2a8-H1-TUT"/>
                                 <include reference="cAV-j3-ejE"/>
                                 <include reference="RZl-qc-xLC"/>
-                                <include reference="s7S-1M-6Yw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -831,6 +831,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="background" destination="CUE-54-Idp" id="x5C-M5-WSw"/>
                         <outlet property="nextButton" destination="RZl-qc-xLC" id="faX-lB-sgR"/>
                     </connections>
                 </viewController>

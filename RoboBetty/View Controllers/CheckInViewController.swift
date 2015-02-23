@@ -12,6 +12,7 @@ class CheckInViewController: UIViewController
 {
     @IBOutlet weak var codeInstruction: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet var background: UIImageView!
     
     override func viewDidLoad()
     {
@@ -20,7 +21,11 @@ class CheckInViewController: UIViewController
         nextButton.backgroundColor = UIColor.grayColor()
         nextButton.layer.borderColor = UIColor.whiteColor().CGColor
         nextButton.layer.borderWidth = 1
+        background.hidden = true
         
+        progressBar.initBars()
+        self.view.addSubview(progressBar.outerProgressBar)
+        self.view.addSubview(progressBar.progressBarLabel)
     }
     
     override func viewWillAppear( animated: Bool )
