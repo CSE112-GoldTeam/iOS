@@ -14,6 +14,7 @@ class ThankYouViewController: UIViewController
     @IBOutlet var pic: UIImageView!
     @IBOutlet var topLabel: UILabel!
     @IBOutlet var bottomLabel: UILabel!
+    @IBOutlet var background: UIImageView!
     
     var previous:String = ""
     
@@ -38,5 +39,9 @@ class ThankYouViewController: UIViewController
     override func viewWillAppear(animated: Bool)
     {
         self.navigationController?.navigationBarHidden = true
+        progressBar.currStep = progressBar.numSteps
+        progressBar.initBars()
+        self.background.addSubview(progressBar.outerProgressBar)
+        self.background.addSubview(progressBar.progressBarLabel)
     }
 }

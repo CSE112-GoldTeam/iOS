@@ -44,11 +44,23 @@ class RBProgressBar: NSObject {
         }
         
         progressBarLabel.text = "Your Checkin Completion:"
+        progressBarLabel.textColor = UIColor.whiteColor()
     }
     
     func initInnerBar(step:Int) -> UILabel{
         let incAmount = 550/numSteps
         var tempInnerProgressBar = UILabel(frame: CGRectMake(2, 3, CGFloat(incAmount * (step+1)), 24))
         return tempInnerProgressBar
+    }
+    
+    func decrementCurrStep(){
+        currStep--
+        outerProgressBar = UILabel(frame: CGRectMake(240, 120, 550, 30))
+        progressBarLabel = UILabel(frame: CGRectMake(240, 83, 400, 40))
+    }
+    
+    func changeYValue(amount:Int){
+        outerProgressBar = UILabel(frame: CGRectMake(240, CGFloat(amount), 550, 30))
+        progressBarLabel = UILabel(frame: CGRectMake(240, CGFloat(amount-37), 400, 40))
     }
 }

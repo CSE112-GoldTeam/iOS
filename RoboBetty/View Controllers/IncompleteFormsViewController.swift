@@ -12,6 +12,7 @@ class IncompleteFormsViewController: UIViewController
 {
     @IBOutlet var topBorder: UILabel!
     @IBOutlet var bottomBorder: UILabel!
+    @IBOutlet var background: UIImageView!
     
     override func viewDidLoad()
     {
@@ -22,5 +23,22 @@ class IncompleteFormsViewController: UIViewController
         
         bottomBorder.layer.borderColor = UIColor.blackColor().CGColor
         bottomBorder.layer.borderWidth = 1.0
+        
+        progressBar.currStep++
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        progressBar.changeYValue(225)
+        progressBar.initBars()
+        self.background.addSubview(progressBar.outerProgressBar)
+        self.background.addSubview(progressBar.progressBarLabel)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if(self.isMovingFromParentViewController()){
+            progressBar.decrementCurrStep()
+        }
     }
 }

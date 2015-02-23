@@ -8,10 +8,11 @@
 
 import UIKit
 
-class UserInfoViewController: UIViewController
+class UserInfoViewController: UIViewController, UINavigationBarDelegate
 {
     @IBOutlet weak var nextSignInButton: UIButton!
     @IBOutlet weak var notYouButton: UIButton!
+    @IBOutlet var background: UIImageView!
 
     override func viewDidLoad()
     {
@@ -28,5 +29,21 @@ class UserInfoViewController: UIViewController
         notYouButton.layer.borderColor = UIColor.whiteColor().CGColor
         notYouButton.layer.cornerRadius = 5
         notYouButton.layer.borderWidth = 1
+        
+        progressBar.currStep++
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        progressBar.initBars()
+        self.background.addSubview(progressBar.outerProgressBar)
+        self.background.addSubview(progressBar.progressBarLabel)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if(self.isMovingFromParentViewController()){
+            progressBar.decrementCurrStep()
+        }
     }
 }
