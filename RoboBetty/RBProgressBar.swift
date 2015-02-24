@@ -48,15 +48,22 @@ class RBProgressBar: NSObject {
     }
     
     func initInnerBar(step:Int) -> UILabel{
+        if(step == numSteps){
+            return UILabel(frame: CGRectMake(2, 3, 545, 24))
+        }
         let incAmount = 550/numSteps
         var tempInnerProgressBar = UILabel(frame: CGRectMake(2, 3, CGFloat(incAmount * (step+1)), 24))
         return tempInnerProgressBar
     }
     
-    func decrementCurrStep(){
-        currStep--
+    func defaultPosition(){
         outerProgressBar = UILabel(frame: CGRectMake(240, 120, 550, 30))
         progressBarLabel = UILabel(frame: CGRectMake(240, 83, 400, 40))
+    }
+    
+    func decrementCurrStep(){
+        currStep--
+        defaultPosition()
     }
     
     func changeYValue(amount:Int){

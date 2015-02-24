@@ -25,10 +25,10 @@ class CheckInViewController: UIViewController
     
     override func viewWillAppear( animated: Bool )
     {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false
         progressBar.initBars()
         self.background.addSubview(progressBar.outerProgressBar)
         self.background.addSubview(progressBar.progressBarLabel)
-        //self.navigationItem.title = "Check In"
     }
 }
