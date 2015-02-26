@@ -96,8 +96,7 @@ class RBLoginViewController: UIViewController
     private func createLoginViews()
     {
         nameLabel = UILabel()
-        nameLabel.text = "RoboBetty"
-        nameLabel.font = RBConstants.primaryFont( 50.0 )
+        nameLabel.attributedText = RBConstants.logoStringWithSize( 60.0 )
         nameLabel.textColor = UIColor.whiteColor()
         nameLabel.sizeToFit()
         
@@ -160,7 +159,7 @@ class RBLoginViewController: UIViewController
         formBackgroundView.autoCenterInSuperview()
         formBackgroundView.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: nameLabel, withMultiplier: 1.50 )
         
-         nameLabel.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: formBackgroundView, withOffset: -10.0 )
+        nameLabel.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: formBackgroundView, withOffset: -10.0 )
     }
     
     private func setupLoginLayout()

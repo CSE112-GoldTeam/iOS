@@ -30,21 +30,21 @@ class CompletedFormsViewController: UIViewController
         bottomBorder.layer.borderColor = UIColor.blackColor().CGColor
         bottomBorder.layer.borderWidth = 1.0
         
-        progressBar.currStep++
+        //progressBar.currStep++
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        progressBar.changeYValue(225)
-        progressBar.initBars()
-        self.background.addSubview(progressBar.outerProgressBar)
-        self.background.addSubview(progressBar.progressBarLabel)
+        //progressBar.changeYValue(225)
+        //progressBar.initBars()
+        //self.background.addSubview(progressBar.outerProgressBar)
+        //self.background.addSubview(progressBar.progressBarLabel)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         if(self.isMovingFromParentViewController()){
-            progressBar.decrementCurrStep()
+            //progressBar.decrementCurrStep()
         }
     }
 }

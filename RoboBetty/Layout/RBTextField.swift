@@ -12,11 +12,11 @@ class RBTextField: UITextField
 {
     override func textRectForBounds( bounds: CGRect ) -> CGRect
     {
-        return CGRectInset( bounds, 10, 10 )
+        return CGRectInset( bounds, 10, 0 )
     }
     
     override func editingRectForBounds( bounds: CGRect ) -> CGRect
     {
-        return CGRectInset( bounds, 10, 10 )
+        return CGRectInset( bounds, 10, 0 )
     }
 }

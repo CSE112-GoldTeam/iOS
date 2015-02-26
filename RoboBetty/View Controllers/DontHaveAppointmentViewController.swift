@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate {
-    
+class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate
+{
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
@@ -18,11 +18,10 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
     var dateFormatter = NSDateFormatter()
     var dateInLabel: NSDate!
     
-    override func viewDidLoad() {
-        //let backItem = UIBarButtonItem(title: "Back", style: .Bordered, target: nil, action: nil)
-        //navigationItem.backBarButtonItem = backItem
-        
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
         doneButton.backgroundColor = UIColor (red:0.29, green:0.863, blue:0.369, alpha:1)
         doneButton.layer.borderColor = UIColor.whiteColor().CGColor
         doneButton.layer.cornerRadius = 5
@@ -36,38 +35,40 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
         dateFormatter.dateFormat = "MM/dd/yyyy"
         dateInLabel = NSDate()
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = false
+    
+    override func viewWillAppear( animated: Bool )
+    {
+        super.viewWillAppear( animated )
+        
         firstNameTextField.text = ""
         lastNameTextField.text = ""
         dateOfBirthTextField.text = ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if textField == dateOfBirthTextField{
+    func textFieldDidBeginEditing( textField: UITextField )
+    {
+        if textField == dateOfBirthTextField
+        {
             dateOfBirthTextField.resignFirstResponder()
             datePicker.hidden = false
             dateOfBirthTextField.text = dateFormatter.stringFromDate(dateInLabel)
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan( touches: NSSet, withEvent event: UIEvent )
+    {
         self.view.endEditing(true)
         datePicker.hidden = true
     }
     
-    func handleDatePicker(sender: UIDatePicker) {
+    func handleDatePicker( sender: UIDatePicker )
+    {
         dateInLabel = sender.date
         dateOfBirthTextField.text = dateFormatter.stringFromDate(dateInLabel)
     }
     
-    @IBAction func doneBtnPressed(sender: AnyObject){
+    @IBAction func doneBtnPressed( sender: AnyObject )
+    {
         /*var alert: UIAlertView!
         if(firstNameTextField.text == ""){
             alert = UIAlertView(title: "ERROR", message: "Please Type Your First Name", delegate: self, cancelButtonTitle: "OK")
@@ -86,9 +87,11 @@ class DontHaveAppointmentViewController: UIViewController, UIPickerViewDelegate,
             
         //}
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "Done"){
-            var destinationVC:ThankYouViewController = segue.destinationViewController as ThankYouViewController
+    override func prepareForSegue( segue: UIStoryboardSegue, sender: AnyObject? )
+    {
+        if segue.identifier == "Done"
+        {
+            var destinationVC:RBThankYouViewController = segue.destinationViewController as RBThankYouViewController
             destinationVC.previous = "No Appointment"
         }
     }
