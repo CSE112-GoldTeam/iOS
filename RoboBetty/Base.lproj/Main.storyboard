@@ -1743,6 +1743,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tia-Z8-tsp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O6a-MY-5ux">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCh-F2-wSR">
@@ -1767,11 +1768,11 @@
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFT-Oo-iK5">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet odio lectus. Donec sem erat, consectetur nec felis id, mollis mollis turpis. Curabitur facilisis posuere dolor, non ultricies tortor dictum dictum. Etiam porttitor dui eu arcu molestie, in vulputate leo pellentesque. Pellentesque at enim vestibulum, finibus nunc at, lobortis leo. In dolor leo, ornare quis ipsum sollicitudin, tristique faucibus est. Donec vel posuere libero. Mauris varius, ligula nec sollicitudin porta, odio metus aliquet mauris, nec sollicitudin arcu odio eget lorem. Praesent at ex et ante sollicitudin hendrerit. Duis auctor ut odio ut feugiat. Duis mollis sem eu pulvinar varius. Phasellus nec dolor elit. Nam tristique tempor augue vitae convallis.
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet odio lectus. Donec sem erat, consectetur nec felis id, mollis mollis turpis. Curabitur facilisis posuere dolor, non ultricies tortor dictum dictum. Etiam porttitor dui eu arcu molestie, in vulputate leo pellentesque. Pellentesque at enim vestibulum, finibus nunc at, lobortis leo. In dolor leo, ornare quis ipsum sollicitudin, tristique faucibus est. Donec vel posuere libero. Mauris varius, ligula nec sollicitudin porta, odio metus aliquet mauris, nec sollicitudin arcu odio eget lorem. Praesent at ex et ante sollicitudin hendrerit. Duis auctor ut odio ut feugiat. Duis mollis sem eu pulvinar varius. Phasellus nec dolor elit. Nam tristique tempor augue vitae convallis.
 
 In ut nisl augue. Curabitur ut mollis purus. Duis faucibus neque quis hendrerit facilisis. Praesent tempor lorem a malesuada convallis. Sed eu erat eu lectus mattis egestas non id massa. Phasellus blandit massa tortor, sit amet vestibulum ex dictum hendrerit. Donec rhoncus aliquet felis, nec maximus odio tincidunt quis. In luctus turpis ac eleifend luctus. Ut risus odio, pulvinar eget nisi nec, sollicitudin sodales elit. Suspendisse sollicitudin metus ornare, elementum nisl eget, fermentum leo. Morbi porta lacus nec sem placerat tristique. Aliquam hendrerit massa lorem, ac laoreet nisi condimentum nec. Nam consectetur viverra tellus sit amet imperdiet. Aliquam erat volutpat.
 
-Morbi iaculis lorem ultricies accumsan ornare. Praesent pretium ipsum tortor, sit amet pretium mi imperdiet ac. Fusce id mi arcu. Sed vel bibendum lorem. Integer suscipit pulvinar mattis. Nam vestibulum ipsum nec augue pulvinar molestie. Fusce rutrum commodo quam eu consequat. Aliquam rutrum lectus dolor, nec maximus mi gravida sit amet. Sed lobortis arcu nec suscipit pellentesque. Suspendisse vehicula lectus tortor, malesuada gravida turpis ornare interdum. Mauris neque dui, posuere nec leo vel, efficitur blandit massa. Nulla ex dolor, eleifend ullamcorper varius at, lacinia nec risus. Vivamus ut velit vehicula, iaculis dui a, finibus purus. Donec in elit eu nisi fringilla varius. Donec consectetur erat ut nunc vulputate tristique. Morbi nec ante egestas, faucibus tellus non, rutrum est.</mutableString>
+Morbi iaculis lorem ultricies accumsan ornare. Praesent pretium ipsum tortor, sit amet pretium mi imperdiet ac. Fusce id mi arcu. Sed vel bibendum lorem. Integer suscipit pulvinar mattis. Nam vestibulum ipsum nec augue pulvinar molestie. Fusce rutrum commodo quam eu consequat. Aliquam rutrum lectus dolor, nec maximus mi gravida sit amet. Sed lobortis arcu nec suscipit pellentesque. Suspendisse vehicula lectus tortor, malesuada gravida turpis ornare interdum. Mauris neque dui, posuere nec leo vel, efficitur blandit massa. Nulla ex dolor, eleifend ullamcorper varius at, lacinia nec risus. Vivamus ut velit vehicula, iaculis dui a, finibus purus. Donec in elit eu nisi fringilla varius. Donec consectetur erat ut nunc vulputate tristique. Morbi nec ante egestas, faucibus tellus non, rutrum est.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1843,14 +1844,14 @@ Morbi iaculis lorem ultricies accumsan ornare. Praesent pretium ipsum tortor, si
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="12P-Vb-ZjB"/>
                                         <exclude reference="0bX-Vz-ION"/>
+                                        <exclude reference="12P-Vb-ZjB"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="12P-Vb-ZjB"/>
                                         <include reference="0bX-Vz-ION"/>
+                                        <include reference="12P-Vb-ZjB"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1906,20 +1907,20 @@ Morbi iaculis lorem ultricies accumsan ornare. Praesent pretium ipsum tortor, si
                                 <exclude reference="7Ge-4Y-8nI"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="JTZ-Wd-THN"/>
-                                <exclude reference="NQj-Tv-Kbv"/>
-                                <exclude reference="lip-4m-Ff6"/>
-                                <exclude reference="vDs-By-zEf"/>
+                                <exclude reference="kPf-TI-RVS"/>
+                                <exclude reference="tk1-xz-uf8"/>
+                                <exclude reference="Cw6-PL-oyb"/>
+                                <exclude reference="prS-4j-uNW"/>
+                                <exclude reference="7sH-8E-qa2"/>
+                                <exclude reference="uw8-C6-sb9"/>
                                 <exclude reference="O1M-xP-JQ1"/>
                                 <exclude reference="RMj-DM-CEV"/>
                                 <exclude reference="RMm-lD-waT"/>
                                 <exclude reference="eYd-xD-4zi"/>
-                                <exclude reference="Cw6-PL-oyb"/>
-                                <exclude reference="prS-4j-uNW"/>
-                                <exclude reference="uw8-C6-sb9"/>
-                                <exclude reference="kPf-TI-RVS"/>
-                                <exclude reference="tk1-xz-uf8"/>
-                                <exclude reference="7sH-8E-qa2"/>
+                                <exclude reference="JTZ-Wd-THN"/>
+                                <exclude reference="NQj-Tv-Kbv"/>
+                                <exclude reference="lip-4m-Ff6"/>
+                                <exclude reference="vDs-By-zEf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1932,20 +1933,20 @@ Morbi iaculis lorem ultricies accumsan ornare. Praesent pretium ipsum tortor, si
                                 <include reference="7Ge-4Y-8nI"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="JTZ-Wd-THN"/>
-                                <include reference="NQj-Tv-Kbv"/>
-                                <include reference="lip-4m-Ff6"/>
-                                <include reference="vDs-By-zEf"/>
+                                <include reference="kPf-TI-RVS"/>
+                                <include reference="tk1-xz-uf8"/>
+                                <include reference="Cw6-PL-oyb"/>
+                                <include reference="prS-4j-uNW"/>
+                                <include reference="7sH-8E-qa2"/>
+                                <include reference="uw8-C6-sb9"/>
                                 <include reference="O1M-xP-JQ1"/>
                                 <include reference="RMj-DM-CEV"/>
                                 <include reference="RMm-lD-waT"/>
                                 <include reference="eYd-xD-4zi"/>
-                                <include reference="Cw6-PL-oyb"/>
-                                <include reference="prS-4j-uNW"/>
-                                <include reference="uw8-C6-sb9"/>
-                                <include reference="kPf-TI-RVS"/>
-                                <include reference="tk1-xz-uf8"/>
-                                <include reference="7sH-8E-qa2"/>
+                                <include reference="JTZ-Wd-THN"/>
+                                <include reference="NQj-Tv-Kbv"/>
+                                <include reference="lip-4m-Ff6"/>
+                                <include reference="vDs-By-zEf"/>
                             </mask>
                         </variation>
                     </view>
@@ -2754,9 +2755,8 @@ Morbi iaculis lorem ultricies accumsan ornare. Praesent pretium ipsum tortor, si
                                     <constraint firstAttribute="width" constant="177" id="TTL-so-n4E"/>
                                     <constraint firstAttribute="height" constant="68" id="tvH-AN-4dn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="TTL-so-n4E"/>

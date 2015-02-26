@@ -24,6 +24,7 @@ class RBThankYouViewController: UIViewController
         okButton.backgroundColor = UIColor.grayColor()
         okButton.layer.borderColor = UIColor.whiteColor().CGColor
         okButton.layer.borderWidth = 1
+        pic.image = UIImage(named: "gold-wreath-md.png")
         
         if previous == "No Appointment"
         {

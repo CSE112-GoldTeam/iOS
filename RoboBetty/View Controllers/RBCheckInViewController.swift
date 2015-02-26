@@ -151,7 +151,7 @@ class RBCheckInViewController: UIViewController
             self.checkinView.hidden = true
 
             let nameField = self.nameField
-            self.performAfterDelay( 0.4, block:
+            self.performAfterDelay( 0.3, block:
             {
                 let open = nameField.becomeFirstResponder()
             })
