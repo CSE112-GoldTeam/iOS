@@ -18,6 +18,8 @@ class RBLoginViewController: UIViewController
     private(set) var passwordField: RBTextField!
     private(set) var loginButton: UIButton!
     
+    private var centerConstraint: NSLayoutConstraint!
+    
     private var shouldSplash = false
     
     init( splash: Bool )
@@ -42,6 +44,44 @@ class RBLoginViewController: UIViewController
     {
         super.touchesBegan( touches, withEvent: event )
         view.endEditing( true )
+    }
+    
+    override func viewWillAppear( animated: Bool )
+    {
+        super.viewWillAppear( animated )
+        
+        NSNotificationCenter.defaultCenter().addObserver( self, selector: "didReceiveKeyboardNotification:", name: UIKeyboardWillHideNotification, object: nil )
+        NSNotificationCenter.defaultCenter().addObserver( self, selector: "didReceiveKeyboardNotification:", name: UIKeyboardWillShowNotification, object: nil )
+    }
+    
+    @objc func didReceiveKeyboardNotification( notification: NSNotification )
+    {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = ( info[UIKeyboardFrameEndUserInfoKey] as NSValue ).CGRectValue()
+        let duration = info[UIKeyboardAnimationDurationUserInfoKey] as Double
+        let curve = info[UIKeyboardAnimationCurveUserInfoKey] as UInt
+        let options = UIViewAnimationOptions( curve << 16 )
+        
+        if notification.name == UIKeyboardWillShowNotification
+        {
+            let keyboardY = keyboardFrame.origin.y
+            let difference = ( formBackgroundView.frame.origin.y + formBackgroundView.frame.size.height ) - keyboardY
+            
+            centerConstraint.constant = -( difference + 10 )
+            ( self.navigationController as? RBNavigationController )?.hideProgressBar( true )
+        }
+        else
+        {
+            centerConstraint.constant = 0
+            ( self.navigationController as? RBNavigationController )?.showProgressBar( true )
+        }
+        
+        UIView.animateWithDuration( duration, delay: 0, options: options, animations:
+        {
+            self.view.setNeedsUpdateConstraints()
+            self.view.layoutIfNeeded()
+        },
+        completion: nil )
     }
     
     override func viewDidAppear( animated: Bool )
@@ -119,6 +159,7 @@ class RBLoginViewController: UIViewController
         usernameField.placeholder = "Username / Email"
         usernameField.textColor = UIColor.blackColor()
         usernameField.backgroundColor = UIColor.whiteColor()
+        usernameField.autocorrectionType = UITextAutocorrectionType.No
         formBackgroundView.addSubview( usernameField )
         usernameField.autoPinEdge( ALEdge.Top, toEdge: ALEdge.Bottom, ofView: signInLabel, withOffset: 10.0 )
         usernameField.autoPinEdgeToSuperviewEdge( ALEdge.Left, withInset: 15.0 )
@@ -158,7 +199,9 @@ class RBLoginViewController: UIViewController
         formBackgroundView.alpha = 0
         view.addSubview( formBackgroundView )
         formBackgroundView.autoMatchDimension( ALDimension.Height, toDimension: ALDimension.Height, ofView: robotImageView )
-        formBackgroundView.autoCenterInSuperview()
+        formBackgroundView.autoAlignAxisToSuperviewAxis( ALAxis.Vertical )
+        centerConstraint = formBackgroundView.autoAlignAxisToSuperviewAxis( ALAxis.Horizontal )
+//        formBackgroundView.autoCenterInSuperview()
         formBackgroundView.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: nameLabel, withMultiplier: 1.50 )
         
         nameLabel.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: formBackgroundView, withOffset: -10.0 )
