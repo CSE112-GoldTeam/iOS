@@ -40,5 +40,10 @@ class RBThankYouViewController: UIViewController
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear( animated )
+        
+        if ( self.navigationController as? RBNavigationController )?.isProgressBarVisible() == true
+        {
+            ( self.navigationController as? RBNavigationController )?.progressBar.setCurrentStep( 5, animated: true )
+        }
     }
 }

@@ -86,6 +86,7 @@ class RBLoginViewController: UIViewController
         let robotImage = UIImage( named: "robot" )
         robotImageView = UIImageView( image: robotImage )
         robotImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        robotImageView.hidden = true
         view.addSubview( robotImageView )
         robotImageView.autoCenterInSuperview()
         robotImageView.autoSetDimensionsToSize( CGSizeMake( robotImage!.size.width * 0.80, robotImage!.size.height * 0.8 ) )
@@ -125,7 +126,7 @@ class RBLoginViewController: UIViewController
         usernameField.autoSetDimension( ALDimension.Height, toSize: 40.0 )
         
         passwordField = RBTextField()
-        passwordField.secureTextEntry = true // hides password as you type in launch screen
+        passwordField.secureTextEntry = true
         passwordField.font = RBConstants.primaryFont( 18.0 )
         passwordField.placeholder = "Password"
         passwordField.textColor = UIColor.blackColor()
@@ -141,6 +142,7 @@ class RBLoginViewController: UIViewController
         loginButton.titleLabel?.font = RBConstants.primaryFont( 20.0 )
         loginButton.setTitleColor( UIColor.whiteColor(), forState: UIControlState.Normal )
         loginButton.backgroundColor = UIColor.grayColor()
+        loginButton.showsTouchWhenHighlighted = true
         loginButton.sizeToFit()
         formBackgroundView.addSubview( loginButton )
         loginButton.autoPinEdge( ALEdge.Top, toEdge: ALEdge.Bottom, ofView: passwordField, withOffset: 20 )

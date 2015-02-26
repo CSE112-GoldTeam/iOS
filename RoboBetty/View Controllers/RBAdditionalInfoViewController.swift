@@ -64,11 +64,8 @@ class RBAdditionalInfoViewController: UIViewController
     
     @IBAction func nextButtonPressed()
     {
-        
+        performSegueWithIdentifier( "signature", sender: nil )
     }
-    
-    
-    
     
     private func setupScrollViewForm()
     {
