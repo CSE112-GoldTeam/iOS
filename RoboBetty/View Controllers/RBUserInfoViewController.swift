@@ -12,10 +12,16 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
 {
     @IBOutlet weak var nextSignInButton: UIButton!
     @IBOutlet weak var notYouButton: UIButton!
+    
+    var firstName:NSString!
+    var email:NSString!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        println("NAMEEEE: \(firstName)")
+        println("EMAIL: \(email)")
         
         nextSignInButton.backgroundColor = UIColor.grayColor()
         nextSignInButton.layer.borderColor = UIColor.whiteColor().CGColor

@@ -12,6 +12,7 @@ public let RBAPILoggedOutNotificationKey = "RoboBetty Logged Out"
 private let SharedManager = RBAPIManager()
 
 import Foundation
+import Alamofire
 
 class RBAPIManager
 {
