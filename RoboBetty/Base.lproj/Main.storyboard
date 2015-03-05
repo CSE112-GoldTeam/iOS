@@ -213,7 +213,8 @@
                                                 <exclude reference="WCF-Fb-cWJ"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="77" y="42" width="281" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="9p8-P2-Har"/>
                                                 <include reference="WCF-Fb-cWJ"/>
@@ -235,7 +236,8 @@
                                                 <exclude reference="Rgf-aT-qu5"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="77" y="80" width="281" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="9Yr-kN-cm5"/>
                                                 <include reference="Rgf-aT-qu5"/>
@@ -261,7 +263,8 @@
                                                 <exclude reference="ffZ-u4-phe"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="77" y="118" width="135" height="36"/>
                                             <mask key="constraints">
                                                 <include reference="BSA-Xq-OlB"/>
                                                 <include reference="ffZ-u4-phe"/>
@@ -290,7 +293,8 @@
                                                 <exclude reference="uYZ-A9-Ki6"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="223" y="118" width="135" height="36"/>
                                             <mask key="constraints">
                                                 <include reference="2DB-h0-gW5"/>
                                                 <include reference="uYZ-A9-Ki6"/>
@@ -922,7 +926,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-4r-gUS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-4r-gUS">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="GZw-38-PDh"/>
@@ -954,7 +958,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="151" id="lZy-dK-UoR">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="162"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="226"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
@@ -981,7 +985,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="0r8-1Y-THc"/>
                                     <constraint firstAttribute="width" constant="151" id="Lh5-gB-nMP">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="162"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="226"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
@@ -1062,7 +1066,7 @@
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88.5" id="3Ui-pA-IdC">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="162"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="225"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="24" id="CYA-M4-pn6"/>
                                 </constraints>
@@ -1119,10 +1123,12 @@
                                     <action selector="nextButtonPressed" destination="UHd-sL-RMe" eventType="touchUpInside" id="r1e-Tj-k0B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, John" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-vQ-ppT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, John" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6q-vQ-ppT">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="bRZ-C4-zV6"/>
+                                    <constraint firstAttribute="width" constant="148" id="bRZ-C4-zV6">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="232"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="66" id="r9A-Qh-mGh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="39"/>
@@ -1295,6 +1301,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dobLabel" destination="lOr-Xy-lFA" id="oxN-Lb-zHt"/>
+                        <outlet property="emailLabel" destination="jaF-B2-6DA" id="kub-TC-eD8"/>
+                        <outlet property="hiLabel" destination="e6q-vQ-ppT" id="qMX-5e-SYa"/>
+                        <outlet property="nameLabel" destination="Hq6-nC-LfN" id="XMi-sG-b9S"/>
                         <outlet property="nextSignInButton" destination="HQG-RB-L2v" id="9KW-PJ-Ttj"/>
                         <outlet property="notYouButton" destination="0Bb-iL-M3t" id="dpt-t4-dRL"/>
                         <segue destination="0K8-SD-Ltm" kind="show" identifier="moreInfo" id="3Zx-cF-j0O"/>

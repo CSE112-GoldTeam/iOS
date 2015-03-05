@@ -12,16 +12,19 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
 {
     @IBOutlet weak var nextSignInButton: UIButton!
     @IBOutlet weak var notYouButton: UIButton!
+    @IBOutlet var hiLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var dobLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
     
     var firstName:NSString!
+    var lastName:NSString!
+    var dateOfBirth:NSString!
     var email:NSString!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        println("NAMEEEE: \(firstName)")
-        println("EMAIL: \(email)")
         
         nextSignInButton.backgroundColor = UIColor.grayColor()
         nextSignInButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -30,6 +33,11 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
         notYouButton.backgroundColor = UIColor.redColor()
         notYouButton.layer.borderColor = UIColor.whiteColor().CGColor
         notYouButton.layer.borderWidth = 1
+        
+        hiLabel.text = "Hi, " + firstName
+        nameLabel.text = firstName + " " + lastName
+        dobLabel.text = dateOfBirth
+        emailLabel.text = email
     }
     
     override func viewWillAppear( animated: Bool )

@@ -43,6 +43,7 @@ class RBCheckInViewController: UIViewController
         cancelButton.layer.borderWidth = 1
         
         formView.hidden = true
+        emailField.placeholder = "Date of Birth: MM/DD/YYYY"
     }
     
     override func viewWillAppear( animated: Bool )
@@ -214,37 +215,44 @@ class RBCheckInViewController: UIViewController
         let duration = keyboardVisible == true ? 0.3 : 0.0
         view.endEditing( true )
         
-        self.performAfterDelay( duration, block:
-            {
-                let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
-                userInfoViewController.firstName = "Emily"
-                userInfoViewController.email = "Emily.Lee@example.com"
-                
-                self.navigationController?.pushViewController( userInfoViewController, animated: true )
-        })
-
-        var response:NSString!
-        Alamofire.request(.GET, "http://robobetty-dev.herokuapp.com/api/m/appointment?fname=Emily&lname=Lee&dob=03/25/1968", parameters: nil, encoding: .JSON).responseJSON { (_, _, JSON, _) in
-            if let jsonResult = JSON as? Array<Dictionary<String,String>> {
-                let fname = jsonResult[0]["fname"]
-                let lname = jsonResult[0]["lname"]
-                let dob = jsonResult[0]["dob"]
-                let email = jsonResult[0]["email"]
-                
-//                self.performAfterDelay( duration, block:
-//                    {
-//                        let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
-//                        userInfoViewController.firstName = fname
-//                        userInfoViewController.email = email
-//                        
-//                        self.navigationController?.pushViewController( userInfoViewController, animated: true )
-//                })
-                
-                println("JSON: fname: \(fname)")
-                println("JSON: lname: \(lname)")
-                println("JSON: dob: \(dob)")
-            }
+        var fullname = nameField.text
+        var fullnameArray = fullname.componentsSeparatedByString(" ")
+        var firstName:NSString!
+        var lastName:NSString!
+        var dateOfBirth = emailField.text
+        if(fullname == "" || dateOfBirth == ""){
+            var alert = UIAlertView(title: "ERROR: Missing Information", message: "Please Make Sure You Filled In All the Information ", delegate: self, cancelButtonTitle: "Close")
+            alert.show()
         }
-        //println("RESPONSE: \(response)")
+        else{
+            firstName = fullnameArray[0]
+            lastName = fullnameArray[1]
+            dateOfBirth = emailField.text
+
+            Alamofire.request(.GET, "http://robobetty-dev.herokuapp.com/api/m/appointment", parameters: ["fname": firstName, "lname": lastName, "dob":dateOfBirth], encoding: .URL).responseJSON { (_, _, JSON, _) in
+                if let jsonResult = JSON as? Array<Dictionary<String,String>> {
+                    if(jsonResult.count == 0){
+                        var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
+                        alert.show()
+                    }
+                    else{
+                        self.performAfterDelay( duration, block:
+                            {
+                                let email = jsonResult[0]["email"]
+                                let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+                                userInfoViewController.firstName = firstName
+                                userInfoViewController.lastName = lastName
+                                userInfoViewController.dateOfBirth = dateOfBirth
+                                userInfoViewController.email = email
+                                self.navigationController?.pushViewController( userInfoViewController, animated: true )
+                        })
+                    }
+
+                
+                }
+            }
+            self.nameField.text = ""
+            self.emailField.text = ""
+        }
     }
 }

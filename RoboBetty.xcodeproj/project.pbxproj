@@ -33,8 +33,8 @@
 		94FF8D7C1A9EE29300283B3D /* RBAdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FF8D7B1A9EE29300283B3D /* RBAdditionalInfoViewController.swift */; };
 		D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */; };
 		D348057A1A89939600B97424 /* RBThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34805791A89939600B97424 /* RBThankYouViewController.swift */; };
-		D38384D31AA7D80200222BE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CC1AA7D7C500222BE2 /* Alamofire.framework */; };
-		D38384D41AA7D80200222BE2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CC1AA7D7C500222BE2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D38384DF1AA83ABB00222BE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CE1AA7D7C500222BE2 /* Alamofire.framework */; };
+		D38384E01AA83ABB00222BE2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CE1AA7D7C500222BE2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D38FD3331A9A976F009133A0 /* RBProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38FD3311A9A976F009133A0 /* RBProgressBar.swift */; };
 		F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */ = {isa = PBXBuildFile; fileRef = F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */; };
 /* End PBXBuildFile section */
@@ -75,12 +75,12 @@
 			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
 			remoteInfo = "Alamofire OSX Tests";
 		};
-		D38384D51AA7D80200222BE2 /* PBXContainerItemProxy */ = {
+		D38384E11AA83ABB00222BE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38384C41AA7D7C500222BE2 /* Alamofire.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
+			remoteGlobalIDString = 4DD67C0A1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -91,7 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D38384D41AA7D80200222BE2 /* Alamofire.framework in Embed Frameworks */,
+				D38384E01AA83ABB00222BE2 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D38384D31AA7D80200222BE2 /* Alamofire.framework in Frameworks */,
+				D38384DF1AA83ABB00222BE2 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +328,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D38384D61AA7D80200222BE2 /* PBXTargetDependency */,
+				D38384E21AA83ABB00222BE2 /* PBXTargetDependency */,
 			);
 			name = RoboBetty;
 			productName = RoboBetty;
@@ -496,10 +496,10 @@
 			target = 94A9A9041A80671D0090935E /* RoboBetty */;
 			targetProxy = 94A9A91B1A80671D0090935E /* PBXContainerItemProxy */;
 		};
-		D38384D61AA7D80200222BE2 /* PBXTargetDependency */ = {
+		D38384E21AA83ABB00222BE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = D38384D51AA7D80200222BE2 /* PBXContainerItemProxy */;
+			name = "Alamofire OSX";
+			targetProxy = D38384E11AA83ABB00222BE2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
