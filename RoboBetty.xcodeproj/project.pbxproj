@@ -24,6 +24,9 @@
 		94A9A9121A80671D0090935E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9111A80671D0090935E /* Images.xcassets */; };
 		94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A9A9131A80671D0090935E /* LaunchScreen.xib */; };
 		94A9A9211A80671D0090935E /* RoboBettyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A9A9201A80671D0090935E /* RoboBettyTests.swift */; };
+		94DC31C51AA8290A00EE80C7 /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DC31C41AA8290A00EE80C7 /* bridge.png */; };
+		94DC31C71AA82AFD00EE80C7 /* blacklogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DC31C61AA82AFD00EE80C7 /* blacklogo.png */; };
+		94DC31C91AA82B0300EE80C7 /* whitelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DC31C81AA82B0300EE80C7 /* whitelogo.png */; };
 		94FF8D761A9D2DD100283B3D /* RBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FF8D751A9D2DD100283B3D /* RBNavigationController.swift */; };
 		94FF8D791A9DCDCB00283B3D /* OleoScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94FF8D771A9DCDCB00283B3D /* OleoScript-Bold.ttf */; };
 		94FF8D7A1A9DCDCB00283B3D /* OleoScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94FF8D781A9DCDCB00283B3D /* OleoScript-Regular.ttf */; };
@@ -124,6 +127,9 @@
 		94A9A91A1A80671D0090935E /* RoboBettyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboBettyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A9A91F1A80671D0090935E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A9A9201A80671D0090935E /* RoboBettyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboBettyTests.swift; sourceTree = "<group>"; };
+		94DC31C41AA8290A00EE80C7 /* bridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge.png; sourceTree = "<group>"; };
+		94DC31C61AA82AFD00EE80C7 /* blacklogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blacklogo.png; sourceTree = "<group>"; };
+		94DC31C81AA82B0300EE80C7 /* whitelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitelogo.png; sourceTree = "<group>"; };
 		94FF8D751A9D2DD100283B3D /* RBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBNavigationController.swift; sourceTree = "<group>"; };
 		94FF8D771A9DCDCB00283B3D /* OleoScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OleoScript-Bold.ttf"; sourceTree = "<group>"; };
 		94FF8D781A9DCDCB00283B3D /* OleoScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OleoScript-Regular.ttf"; sourceTree = "<group>"; };
@@ -251,6 +257,9 @@
 				94A9A9111A80671D0090935E /* Images.xcassets */,
 				94A9A9131A80671D0090935E /* LaunchScreen.xib */,
 				9445B9761A8B09ED0081ACC0 /* RoboBetty-Bridging-Header.h */,
+				94DC31C41AA8290A00EE80C7 /* bridge.png */,
+				94DC31C61AA82AFD00EE80C7 /* blacklogo.png */,
+				94DC31C81AA82B0300EE80C7 /* whitelogo.png */,
 				94FF8D771A9DCDCB00283B3D /* OleoScript-Bold.ttf */,
 				94FF8D781A9DCDCB00283B3D /* OleoScript-Regular.ttf */,
 				F506D8091A896FC200BA3A47 /* images */,
@@ -426,8 +435,11 @@
 			files = (
 				94A9A9101A80671D0090935E /* Main.storyboard in Resources */,
 				F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */,
+				94DC31C51AA8290A00EE80C7 /* bridge.png in Resources */,
 				7F0B7E151A899B42003D8C62 /* Form.png in Resources */,
+				94DC31C71AA82AFD00EE80C7 /* blacklogo.png in Resources */,
 				94FF8D791A9DCDCB00283B3D /* OleoScript-Bold.ttf in Resources */,
+				94DC31C91AA82B0300EE80C7 /* whitelogo.png in Resources */,
 				94A9A9151A80671D0090935E /* LaunchScreen.xib in Resources */,
 				94A9A9121A80671D0090935E /* Images.xcassets in Resources */,
 				94FF8D7A1A9DCDCB00283B3D /* OleoScript-Regular.ttf in Resources */,

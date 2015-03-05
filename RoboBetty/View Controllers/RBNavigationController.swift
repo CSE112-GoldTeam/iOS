@@ -12,7 +12,7 @@ class RBNavigationController: UINavigationController, UINavigationControllerDele
 {
     private(set) var backgroundImageView: UIImageView!
     private(set) var progressBar: RBProgressBar!
-    private(set) var bettyLabel: UILabel!
+    private(set) var logoImage: UIImageView!
     
     private var progressBarVisible = false
     
@@ -42,7 +42,7 @@ class RBNavigationController: UINavigationController, UINavigationControllerDele
         
         progressBarConstraint = progressBar.autoPinEdgeToSuperviewEdge( ALEdge.Top, withInset: 100 )
         
-        let duration = animated ? 0.3 : 0.0
+        let duration = animated ? 0.5 : 0.0
         
         UIView.animateWithDuration( duration, animations:
         {
@@ -84,18 +84,18 @@ class RBNavigationController: UINavigationController, UINavigationControllerDele
     {
         backgroundImageView = UIImageView()
         backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        backgroundImageView.image = UIImage( named: "background" )
+        backgroundImageView.image = UIImage( named: "bridge" )
         view.insertSubview( backgroundImageView, atIndex: 0 )
         backgroundImageView.autoPinEdgesToSuperviewEdgesWithInsets( UIEdgeInsetsZero )
         
-        bettyLabel = UILabel()
-        bettyLabel.attributedText = RBConstants.logoStringWithSize( 30.0 )
-        bettyLabel.textColor = UIColor.whiteColor()
-        bettyLabel.sizeToFit()
-        view.insertSubview( bettyLabel, aboveSubview: backgroundImageView )
-        bettyLabel.autoPinToBottomLayoutGuideOfViewController( self, withInset: 5 )
-        bettyLabel.autoSetDimensionsToSize( bettyLabel.frame.size )
-        bettyLabel.autoPinEdgeToSuperviewEdge( ALEdge.Left, withInset: 10 )
+        let blackLogo = UIImage( named: "whitelogo" )
+        logoImage = UIImageView()
+        logoImage.image = blackLogo
+        logoImage.frame = CGRectMake( 0, 0, blackLogo!.size.width / 2, blackLogo!.size.height / 2 )
+        view.insertSubview( logoImage, aboveSubview: backgroundImageView )
+        logoImage.autoPinToBottomLayoutGuideOfViewController( self, withInset: 5 )
+        logoImage.autoSetDimensionsToSize( logoImage.frame.size )
+        logoImage.autoPinEdgeToSuperviewEdge( ALEdge.Left, withInset: 10 )
         
         progressBar = RBProgressBar( numberOfSteps: 5 )
         progressBar.setProgressBarColor( UIColor( red: 0.11, green: 0.73, blue: 0.6, alpha: 1.0 ) )
@@ -166,6 +166,6 @@ class RBNavigationTransitionManager: NSObject, UIViewControllerAnimatedTransitio
     
     func transitionDuration( transitionContext: UIViewControllerContextTransitioning ) -> NSTimeInterval
     {
-        return 0.3
+        return 0.5
     }
 }

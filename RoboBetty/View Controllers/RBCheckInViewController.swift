@@ -119,7 +119,7 @@ class RBCheckInViewController: UIViewController
         formViewConstraint = formView.autoPinEdge( ALEdge.Left, toEdge: ALEdge.Right, ofView: view )
         checkinConstraint = checkinView.autoAlignAxisToSuperviewAxis( ALAxis.Vertical )
         
-        UIView.animateWithDuration( 0.3, animations:
+        UIView.animateWithDuration( 0.5, animations:
         {
             self.view.setNeedsUpdateConstraints()
             self.view.layoutIfNeeded()
@@ -140,7 +140,7 @@ class RBCheckInViewController: UIViewController
         formViewConstraint = formView.autoAlignAxisToSuperviewAxis( ALAxis.Vertical )
         checkinConstraint = checkinView.autoPinEdge( ALEdge.Right, toEdge: ALEdge.Left, ofView: view )
         
-        UIView.animateWithDuration( 0.3, animations:
+        UIView.animateWithDuration( 0.5, animations:
         {
             self.view.setNeedsUpdateConstraints()
             self.view.layoutIfNeeded()
@@ -213,6 +213,15 @@ class RBCheckInViewController: UIViewController
     {
         let duration = keyboardVisible == true ? 0.3 : 0.0
         view.endEditing( true )
+        
+        self.performAfterDelay( duration, block:
+            {
+                let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+                userInfoViewController.firstName = "Emily"
+                userInfoViewController.email = "Emily.Lee@example.com"
+                
+                self.navigationController?.pushViewController( userInfoViewController, animated: true )
+        })
 
         var response:NSString!
         Alamofire.request(.GET, "http://robobetty-dev.herokuapp.com/api/m/appointment?fname=Emily&lname=Lee&dob=03/25/1968", parameters: nil, encoding: .JSON).responseJSON { (_, _, JSON, _) in
@@ -222,14 +231,14 @@ class RBCheckInViewController: UIViewController
                 let dob = jsonResult[0]["dob"]
                 let email = jsonResult[0]["email"]
                 
-                self.performAfterDelay( duration, block:
-                    {
-                        let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
-                        userInfoViewController.firstName = fname
-                        userInfoViewController.email = email
-                        
-                        self.navigationController?.pushViewController( userInfoViewController, animated: true )
-                })
+//                self.performAfterDelay( duration, block:
+//                    {
+//                        let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+//                        userInfoViewController.firstName = fname
+//                        userInfoViewController.email = email
+//                        
+//                        self.navigationController?.pushViewController( userInfoViewController, animated: true )
+//                })
                 
                 println("JSON: fname: \(fname)")
                 println("JSON: lname: \(lname)")

@@ -12,7 +12,7 @@ class RBLoginViewController: UIViewController
 {
     private(set) var backgroundImageView: UIImageView!
     private(set) var robotImageView: UIImageView!
-    private(set) var nameLabel: UILabel!
+    private(set) var logoImage: UIImageView!
     private(set) var formBackgroundView: UIView!
     private(set) var usernameField: RBTextField!
     private(set) var passwordField: RBTextField!
@@ -136,10 +136,10 @@ class RBLoginViewController: UIViewController
     
     private func createLoginViews()
     {
-        nameLabel = UILabel()
-        nameLabel.attributedText = RBConstants.logoStringWithSize( 60.0 )
-        nameLabel.textColor = UIColor.whiteColor()
-        nameLabel.sizeToFit()
+        let image = UIImage( named: "whitelogo" )
+        logoImage = UIImageView()
+        logoImage.image = image
+        logoImage.frame = CGRectMake( 0, 0, image!.size.width, image!.size.height )
         
         formBackgroundView = UIView()
         formBackgroundView.backgroundColor = UIColor( red: 0, green: 0, blue: 0, alpha: 0.7 )
@@ -191,10 +191,10 @@ class RBLoginViewController: UIViewController
         loginButton.autoPinEdge( ALEdge.Left, toEdge: ALEdge.Left, ofView: passwordField )
         loginButton.autoPinEdge( ALEdge.Right, toEdge: ALEdge.Right, ofView: passwordField )
         
-        nameLabel.alpha = 0
-        view.addSubview( nameLabel )
-        nameLabel.autoSetDimensionsToSize( nameLabel.frame.size )
-        nameLabel.autoAlignAxisToSuperviewAxis( ALAxis.Vertical )
+        logoImage.alpha = 0
+        view.addSubview( logoImage )
+        logoImage.autoSetDimensionsToSize( logoImage.frame.size )
+        logoImage.autoAlignAxisToSuperviewAxis( ALAxis.Vertical )
         
         formBackgroundView.alpha = 0
         view.addSubview( formBackgroundView )
@@ -202,9 +202,9 @@ class RBLoginViewController: UIViewController
         formBackgroundView.autoAlignAxisToSuperviewAxis( ALAxis.Vertical )
         centerConstraint = formBackgroundView.autoAlignAxisToSuperviewAxis( ALAxis.Horizontal )
 //        formBackgroundView.autoCenterInSuperview()
-        formBackgroundView.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: nameLabel, withMultiplier: 1.50 )
+        formBackgroundView.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: logoImage, withMultiplier: 1.50 )
         
-        nameLabel.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: formBackgroundView, withOffset: -10.0 )
+        logoImage.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: formBackgroundView, withOffset: -10.0 )
     }
     
     private func setupLoginLayout()
@@ -215,7 +215,7 @@ class RBLoginViewController: UIViewController
         robotImageView.autoPinEdge( ALEdge.Right, toEdge: ALEdge.Left, ofView: formBackgroundView, withOffset: -20.0 )
         robotImageView.autoPinEdge( ALEdge.Top, toEdge: ALEdge.Top, ofView: formBackgroundView )
         
-        nameLabel.alpha = 1
+        logoImage.alpha = 1
         formBackgroundView.alpha = 1
     }
 }
