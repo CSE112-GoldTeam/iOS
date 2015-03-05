@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F0B7E0F1A898FC7003D8C62 /* IncompleteFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */; };
-		7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */; };
 		7F0B7E151A899B42003D8C62 /* Form.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0B7E141A899B42003D8C62 /* Form.png */; };
 		7F65BBC81A898158002A0BC4 /* RBUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F65BBC71A898158002A0BC4 /* RBUserInfoViewController.swift */; };
 		9404B32E1A8B0DE700A26DDA /* RBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9404B32D1A8B0DE700A26DDA /* RBTextField.swift */; };
@@ -34,7 +32,6 @@
 		D348057A1A89939600B97424 /* RBThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34805791A89939600B97424 /* RBThankYouViewController.swift */; };
 		D38FD3331A9A976F009133A0 /* RBProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38FD3311A9A976F009133A0 /* RBProgressBar.swift */; };
 		F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */ = {isa = PBXBuildFile; fileRef = F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */; };
-		F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompleteFormsViewController.swift; sourceTree = "<group>"; };
-		7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedFormsViewController.swift; sourceTree = "<group>"; };
 		7F0B7E141A899B42003D8C62 /* Form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Form.png; sourceTree = "<group>"; };
 		7F65BBC71A898158002A0BC4 /* RBUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBUserInfoViewController.swift; sourceTree = "<group>"; };
 		9404B32D1A8B0DE700A26DDA /* RBTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBTextField.swift; sourceTree = "<group>"; };
@@ -86,7 +81,6 @@
 		D34805791A89939600B97424 /* RBThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBThankYouViewController.swift; sourceTree = "<group>"; };
 		D38FD3311A9A976F009133A0 /* RBProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBProgressBar.swift; sourceTree = "<group>"; };
 		F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-wreath-md.png"; sourceTree = "<group>"; };
-		F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoConfirmationCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +134,17 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		9474CBA21AA138BD0068E51C /* M13Progress */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = M13Progress;
+			sourceTree = "<group>";
+		};
 		947F7EF41A8AFEA50031D7D4 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9474CBA21AA138BD0068E51C /* M13Progress */,
 				947F7EF51A8AFEBF0031D7D4 /* Alamofire.swift */,
 				9445B9641A8B06560081ACC0 /* PureLayout */,
 			);
@@ -159,9 +161,6 @@
 				94FF8D7B1A9EE29300283B3D /* RBAdditionalInfoViewController.swift */,
 				94109B041A9EFAA100AAFA6D /* RBSignatureViewController.swift */,
 				D34805791A89939600B97424 /* RBThankYouViewController.swift */,
-				7F0B7E0E1A898FC7003D8C62 /* IncompleteFormsViewController.swift */,
-				F5E246E11A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift */,
-				7F0B7E121A899553003D8C62 /* CompletedFormsViewController.swift */,
 				D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */,
 			);
 			path = "View Controllers";
@@ -345,7 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F0B7E131A899553003D8C62 /* CompletedFormsViewController.swift in Sources */,
 				94A9A90D1A80671D0090935E /* RBCheckInViewController.swift in Sources */,
 				7F65BBC81A898158002A0BC4 /* RBUserInfoViewController.swift in Sources */,
 				D348057A1A89939600B97424 /* RBThankYouViewController.swift in Sources */,
@@ -358,10 +356,8 @@
 				94FF8D7C1A9EE29300283B3D /* RBAdditionalInfoViewController.swift in Sources */,
 				9404B32E1A8B0DE700A26DDA /* RBTextField.swift in Sources */,
 				9445B9751A8B06BE0081ACC0 /* RBAPIManager.swift in Sources */,
-				7F0B7E0F1A898FC7003D8C62 /* IncompleteFormsViewController.swift in Sources */,
 				D38FD3331A9A976F009133A0 /* RBProgressBar.swift in Sources */,
 				D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */,
-				F5E246E21A897C6600C5F7E1 /* NoConfirmationCodeViewController.swift in Sources */,
 				9445B96F1A8B06560081ACC0 /* NSArray+PureLayout.m in Sources */,
 				947F7EF81A8B00870031D7D4 /* RBLoginViewController.swift in Sources */,
 				94FF8D761A9D2DD100283B3D /* RBNavigationController.swift in Sources */,

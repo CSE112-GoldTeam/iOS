@@ -99,7 +99,7 @@ class RBLoginViewController: UIViewController
     
     func submitLogin()
     {
-        RBAPIManager.manager.login( "", password: "" )
+         ( UIApplication.sharedApplication().delegate as AppDelegate ).appLoggedIn()
     }
     
     

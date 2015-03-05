@@ -27,12 +27,14 @@ class RBAPIManager
         accessToken = NSUserDefaults.standardUserDefaults().objectForKey( "token" ) as? String
     }
     
+    
+    
     func isLoggedIn() -> Bool
     {
         return accessToken != nil
     }
     
-    func login( username: String!, password: String! )
+    func login( username: String!, password: String!, completion: ( success: Bool ) -> () )
     {
         accessToken = "temp"
         NSNotificationCenter.defaultCenter().postNotificationName( RBAPILoggedInNotificationKey, object: nil )
