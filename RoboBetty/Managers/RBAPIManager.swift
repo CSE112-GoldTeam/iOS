@@ -10,6 +10,7 @@ public let RBAPILoggedInNotificationKey  = "RoboBetty Logged In"
 public let RBAPILoggedOutNotificationKey = "RoboBetty Logged Out"
 
 private let SharedManager = RBAPIManager()
+private let URL = "http://robobetty-dev.herokuapp.com/api/m/appointment"
 
 import Foundation
 import Alamofire
@@ -45,4 +46,24 @@ class RBAPIManager
     {
         accessToken = nil
     }
+    
+    func getAppointmentInfo(fName:NSString, lName:NSString, dob:NSString, completionHandler: (responseObject: NSMutableDictionary?) -> ()){
+        Alamofire.request(.GET, URL, parameters: ["fname": fName, "lname": lName, "dob":dob], encoding: .URL).responseJSON { (_, _, JSON, _) in
+            if let jsonResult = JSON as? Array<Dictionary<String,String>> {
+                if(jsonResult.count == 0){
+                    completionHandler(responseObject: nil)
+                }
+                else{
+                    var information = NSMutableDictionary()
+                    let email = jsonResult[0]["email"]
+                    information.setValue(fName, forKey: "fname")
+                    information.setValue(lName, forKey: "lname")
+                    information.setValue(dob, forKey: "dob")
+                    information.setValue(email, forKey: "email")
+                    completionHandler(responseObject: information)
+                }
+            }
+        }
+    }
+    
 }

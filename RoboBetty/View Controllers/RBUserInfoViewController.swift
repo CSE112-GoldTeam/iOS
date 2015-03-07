@@ -21,6 +21,7 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
     var lastName:NSString!
     var dateOfBirth:NSString!
     var email:NSString!
+    var information:NSMutableDictionary!
 
     override func viewDidLoad()
     {
@@ -33,6 +34,11 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
         notYouButton.backgroundColor = UIColor.redColor()
         notYouButton.layer.borderColor = UIColor.whiteColor().CGColor
         notYouButton.layer.borderWidth = 1
+        
+        firstName = information.valueForKey("fname") as NSString
+        lastName = information.valueForKey("lname") as NSString
+        dateOfBirth = information.valueForKey("dob") as NSString
+        email = information.valueForKey("email") as NSString
         
         hiLabel.text = "Hi, " + firstName
         nameLabel.text = firstName + " " + lastName

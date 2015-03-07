@@ -25,6 +25,7 @@ class RBCheckInViewController: UIViewController
     @IBOutlet weak var checkinConstraint: NSLayoutConstraint!
     
     private var keyboardVisible = false
+    private var manager = RBAPIManager()
     
     override func viewDidLoad()
     {
@@ -228,31 +229,24 @@ class RBCheckInViewController: UIViewController
             firstName = fullnameArray[0]
             lastName = fullnameArray[1]
             dateOfBirth = emailField.text
-
-            Alamofire.request(.GET, "http://robobetty-dev.herokuapp.com/api/m/appointment", parameters: ["fname": firstName, "lname": lastName, "dob":dateOfBirth], encoding: .URL).responseJSON { (_, _, JSON, _) in
-                if let jsonResult = JSON as? Array<Dictionary<String,String>> {
-                    if(jsonResult.count == 0){
-                        var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
-                        alert.show()
-                    }
-                    else{
-                        self.performAfterDelay( duration, block:
-                            {
-                                let email = jsonResult[0]["email"]
-                                let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
-                                userInfoViewController.firstName = firstName
-                                userInfoViewController.lastName = lastName
-                                userInfoViewController.dateOfBirth = dateOfBirth
-                                userInfoViewController.email = email
-                                self.navigationController?.pushViewController( userInfoViewController, animated: true )
-                        })
-                    }
-
-                
-                }
+            
+            manager.getAppointmentInfo(firstName, lName: lastName, dob: dateOfBirth) { responseObject in
+                self.performAfterDelay( duration, block:
+                    {
+                        if(responseObject == nil){
+                            var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
+                            alert.show()
+                        }
+                        else{
+                            let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+                            userInfoViewController.information = responseObject
+                            self.navigationController?.pushViewController( userInfoViewController, animated: true )
+                        }
+                        self.nameField.text = ""
+                        self.emailField.text = ""
+                })
+                return
             }
-            self.nameField.text = ""
-            self.emailField.text = ""
         }
     }
 }
