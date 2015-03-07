@@ -15,10 +15,11 @@ class RBCheckInViewController: UIViewController
     @IBOutlet weak var centerBackground: UIView!
     @IBOutlet weak var formView: UIView!
     @IBOutlet weak var checkinView: UIView!
-    @IBOutlet weak var nameField: RBTextField!
-    @IBOutlet weak var emailField: RBTextField!
+    @IBOutlet weak var firstNameField: RBTextField!
+    @IBOutlet weak var dobField: RBTextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet var lastNameField: RBTextField!
     
     @IBOutlet weak var verticalCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var formViewConstraint: NSLayoutConstraint!
@@ -44,7 +45,7 @@ class RBCheckInViewController: UIViewController
         cancelButton.layer.borderWidth = 1
         
         formView.hidden = true
-        emailField.placeholder = "Date of Birth: MM/DD/YYYY"
+        dobField.placeholder = "Date of Birth: MM/DD/YYYY"
     }
     
     override func viewWillAppear( animated: Bool )
@@ -85,7 +86,7 @@ class RBCheckInViewController: UIViewController
             let keyboardY = keyboardFrame.origin.y
             let difference = ( centerBackground.frame.origin.y + centerBackground.frame.size.height ) - keyboardY
             
-            verticalCenterConstraint.constant = difference + 20
+            verticalCenterConstraint.constant = difference + 40
             ( self.navigationController as? RBNavigationController )?.hideProgressBar( true )
             
             keyboardVisible = true
@@ -153,10 +154,10 @@ class RBCheckInViewController: UIViewController
             
             self.checkinView.hidden = true
 
-            let nameField = self.nameField
+            let firstNameField = self.firstNameField
             self.performAfterDelay( 0.3, block:
             {
-                let open = nameField.becomeFirstResponder()
+                let open = firstNameField.becomeFirstResponder()
             })
         })
     }
@@ -216,21 +217,19 @@ class RBCheckInViewController: UIViewController
         let duration = keyboardVisible == true ? 0.3 : 0.0
         view.endEditing( true )
         
-        var fullname = nameField.text
-        var fullnameArray = fullname.componentsSeparatedByString(" ")
-        var firstName:NSString!
-        var lastName:NSString!
-        var dateOfBirth = emailField.text
-        if(fullname == "" || dateOfBirth == ""){
+        var fName = firstNameField.text
+        var lName = lastNameField.text
+        var dateOfBirth = dobField.text
+        
+        if(fName == "" || lName == "" || dateOfBirth == ""){
             var alert = UIAlertView(title: "ERROR: Missing Information", message: "Please Make Sure You Filled In All the Information ", delegate: self, cancelButtonTitle: "Close")
             alert.show()
         }
         else{
-            firstName = fullnameArray[0]
-            lastName = fullnameArray[1]
-            dateOfBirth = emailField.text
+            var capitalFirstName = fName.substringToIndex(advance(fName.startIndex, 1)).uppercaseString.stringByAppendingString(fName.substringFromIndex(advance(fName.startIndex, 1)))
+            var capitalLastName = lName.substringToIndex(advance(lName.startIndex, 1)).uppercaseString.stringByAppendingString(lName.substringFromIndex(advance(lName.startIndex, 1)))
             
-            manager.getAppointmentInfo(firstName, lName: lastName, dob: dateOfBirth) { responseObject in
+            manager.getAppointmentInfo(capitalFirstName, lName: capitalLastName, dob: dateOfBirth) { responseObject in
                 self.performAfterDelay( duration, block:
                     {
                         if(responseObject == nil){
@@ -242,8 +241,9 @@ class RBCheckInViewController: UIViewController
                             userInfoViewController.information = responseObject
                             self.navigationController?.pushViewController( userInfoViewController, animated: true )
                         }
-                        self.nameField.text = ""
-                        self.emailField.text = ""
+                        self.firstNameField.text = ""
+                        self.lastNameField.text = ""
+                        self.dobField.text = ""
                 })
                 return
             }

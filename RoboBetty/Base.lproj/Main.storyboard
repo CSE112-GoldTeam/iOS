@@ -198,7 +198,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HmE-kW-X3c" customClass="RBTextField" customModule="RoboBetty" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HmE-kW-X3c" userLabel="First Name" customClass="RBTextField" customModule="RoboBetty" customModuleProvider="target">
                                         <rect key="frame" x="75.5" y="65" width="281" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -213,15 +213,14 @@
                                                 <exclude reference="WCF-Fb-cWJ"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="77" y="42" width="281" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="9p8-P2-Har"/>
                                                 <include reference="WCF-Fb-cWJ"/>
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-7S-eNO" customClass="RBTextField" customModule="RoboBetty" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-7S-eNO" userLabel="Last Name" customClass="RBTextField" customModule="RoboBetty" customModuleProvider="target">
                                         <rect key="frame" x="75.5" y="117" width="281" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -236,11 +235,33 @@
                                                 <exclude reference="Rgf-aT-qu5"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="77" y="80" width="281" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="9Yr-kN-cm5"/>
                                                 <include reference="Rgf-aT-qu5"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth: MM/DD/YYYY" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pex-u5-SYt" userLabel="Date Of Birth" customClass="RBTextField" customModule="RoboBetty" customModuleProvider="target">
+                                        <rect key="frame" x="75.5" y="117" width="281" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="281" id="IUL-Kd-Gye"/>
+                                            <constraint firstAttribute="height" constant="30" id="o4F-p8-fZJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="o4F-p8-fZJ"/>
+                                                <exclude reference="IUL-Kd-Gye"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="75" y="66" width="281" height="30"/>
+                                            <mask key="constraints">
+                                                <include reference="o4F-p8-fZJ"/>
+                                                <include reference="IUL-Kd-Gye"/>
                                             </mask>
                                         </variation>
                                     </textField>
@@ -263,8 +284,7 @@
                                                 <exclude reference="ffZ-u4-phe"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="77" y="118" width="135" height="36"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="BSA-Xq-OlB"/>
                                                 <include reference="ffZ-u4-phe"/>
@@ -293,8 +313,7 @@
                                                 <exclude reference="uYZ-A9-Ki6"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="223" y="118" width="135" height="36"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="2DB-h0-gW5"/>
                                                 <include reference="uYZ-A9-Ki6"/>
@@ -312,51 +331,65 @@
                                     <constraint firstAttribute="width" constant="432" id="Hfl-OY-TJI"/>
                                     <constraint firstItem="fWh-7S-eNO" firstAttribute="trailing" secondItem="tEK-QS-JNf" secondAttribute="trailing" id="KbO-1w-osD"/>
                                     <constraint firstItem="fWh-7S-eNO" firstAttribute="top" secondItem="HmE-kW-X3c" secondAttribute="bottom" constant="8" id="OPV-UX-yJp"/>
+                                    <constraint firstItem="HmE-kW-X3c" firstAttribute="centerX" secondItem="Pex-u5-SYt" secondAttribute="centerX" constant="1" id="V54-AB-G8f">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="tEK-QS-JNf" secondAttribute="bottom" constant="8" id="ZRq-QW-Btw"/>
                                     <constraint firstItem="fWh-7S-eNO" firstAttribute="centerX" secondItem="tEK-QS-JNf" secondAttribute="centerX" id="cFA-iK-IAv"/>
                                     <constraint firstItem="fWh-7S-eNO" firstAttribute="leading" secondItem="JZv-yg-3cy" secondAttribute="leading" id="ds7-pn-Trt"/>
                                     <constraint firstAttribute="height" constant="162" id="jW6-Fu-C9R"/>
+                                    <constraint firstItem="Pex-u5-SYt" firstAttribute="top" secondItem="HmE-kW-X3c" secondAttribute="bottom" constant="-6" id="nIJ-TS-Iip">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="46"/>
+                                    </constraint>
                                     <constraint firstAttribute="centerX" secondItem="WjF-T5-Mgw" secondAttribute="centerX" constant="-1" id="pmE-S1-03t"/>
                                     <constraint firstAttribute="bottom" secondItem="JZv-yg-3cy" secondAttribute="bottom" constant="8" id="tB3-lh-Xa0"/>
-                                    <constraint firstItem="WjF-T5-Mgw" firstAttribute="top" secondItem="eJE-HA-HXr" secondAttribute="top" constant="8" id="wra-yA-gei"/>
+                                    <constraint firstItem="WjF-T5-Mgw" firstAttribute="top" secondItem="eJE-HA-HXr" secondAttribute="top" constant="8" id="wra-yA-gei">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-30"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
+                                        <exclude reference="Pex-u5-SYt"/>
                                         <exclude reference="JZv-yg-3cy"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="Hfl-OY-TJI"/>
                                         <exclude reference="jW6-Fu-C9R"/>
-                                        <exclude reference="tB3-lh-Xa0"/>
                                         <exclude reference="Byw-aC-f5P"/>
                                         <exclude reference="pmE-S1-03t"/>
                                         <exclude reference="wra-yA-gei"/>
                                         <exclude reference="DeU-rp-Z5u"/>
+                                        <exclude reference="V54-AB-G8f"/>
+                                        <exclude reference="nIJ-TS-Iip"/>
                                         <exclude reference="EJy-Bh-gnh"/>
                                         <exclude reference="KbO-1w-osD"/>
                                         <exclude reference="OPV-UX-yJp"/>
                                         <exclude reference="cFA-iK-IAv"/>
                                         <exclude reference="ds7-pn-Trt"/>
+                                        <exclude reference="tB3-lh-Xa0"/>
                                         <exclude reference="ZRq-QW-Btw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
+                                        <include reference="Pex-u5-SYt"/>
                                         <include reference="JZv-yg-3cy"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Hfl-OY-TJI"/>
                                         <include reference="jW6-Fu-C9R"/>
-                                        <include reference="tB3-lh-Xa0"/>
                                         <include reference="Byw-aC-f5P"/>
                                         <include reference="pmE-S1-03t"/>
                                         <include reference="wra-yA-gei"/>
                                         <include reference="DeU-rp-Z5u"/>
+                                        <include reference="V54-AB-G8f"/>
+                                        <include reference="nIJ-TS-Iip"/>
                                         <include reference="EJy-Bh-gnh"/>
                                         <include reference="KbO-1w-osD"/>
                                         <include reference="OPV-UX-yJp"/>
                                         <exclude reference="cFA-iK-IAv"/>
                                         <include reference="ds7-pn-Trt"/>
+                                        <include reference="tB3-lh-Xa0"/>
                                         <include reference="ZRq-QW-Btw"/>
                                     </mask>
                                 </variation>
@@ -442,10 +475,11 @@
                         <outlet property="checkInButton" destination="Irz-XO-CAy" id="UQU-Cb-7SH"/>
                         <outlet property="checkinConstraint" destination="ht1-Gj-Gu6" id="gPV-2x-YUA"/>
                         <outlet property="checkinView" destination="sSv-7W-hvM" id="BKx-Dx-jSQ"/>
-                        <outlet property="emailField" destination="fWh-7S-eNO" id="ALX-PI-G4J"/>
+                        <outlet property="dobField" destination="Pex-u5-SYt" id="ccc-ru-t6t"/>
+                        <outlet property="firstNameField" destination="HmE-kW-X3c" id="JXQ-Cp-aot"/>
                         <outlet property="formView" destination="eJE-HA-HXr" id="Iag-E4-Pcw"/>
                         <outlet property="formViewConstraint" destination="XVS-EI-hZ8" id="uB5-pN-kng"/>
-                        <outlet property="nameField" destination="HmE-kW-X3c" id="MbQ-uT-ahZ"/>
+                        <outlet property="lastNameField" destination="fWh-7S-eNO" id="98A-oU-TmK"/>
                         <outlet property="nextButton" destination="tEK-QS-JNf" id="nO1-CZ-bLP"/>
                         <outlet property="verticalCenterConstraint" destination="5Vj-6k-2fu" id="haM-KH-mcJ"/>
                         <segue destination="UHd-sL-RMe" kind="show" identifier="confirmUser" id="M8f-6g-oYV"/>
