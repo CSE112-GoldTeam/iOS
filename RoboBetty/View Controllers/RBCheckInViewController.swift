@@ -45,7 +45,11 @@ class RBCheckInViewController: UIViewController
         cancelButton.layer.borderWidth = 1
         
         formView.hidden = true
-        dobField.placeholder = "Date of Birth: MM/DD/YYYY"
+
+        var datePickerView  : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        dobField.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear( animated: Bool )
@@ -75,7 +79,6 @@ class RBCheckInViewController: UIViewController
     
     @objc func didReceiveKeyboardNotification( notification: NSNotification )
     {
-        println("KEYBOARD")
         let info = notification.userInfo!
         let keyboardFrame: CGRect = ( info[UIKeyboardFrameEndUserInfoKey] as NSValue ).CGRectValue()
         let duration = info[UIKeyboardAnimationDurationUserInfoKey] as Double
@@ -85,8 +88,8 @@ class RBCheckInViewController: UIViewController
         if notification.name == UIKeyboardWillShowNotification
         {
             let keyboardY = keyboardFrame.origin.y
-            let difference = ( centerBackground.frame.origin.y + centerBackground.frame.size.height ) - keyboardY
-            
+            let difference = ( 172.0 + centerBackground.frame.size.height ) - keyboardY
+                        
             verticalCenterConstraint.constant = difference + 40
             ( self.navigationController as? RBNavigationController )?.hideProgressBar( true )
             
@@ -251,13 +254,14 @@ class RBCheckInViewController: UIViewController
         }
     }
     
-    @IBAction func dateField(sender: UITextField) {
+/*    @IBAction func dateField(sender: UITextField) {
+        println("DATE FIELD")
         var datePickerView  : UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
         datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
         
-    }
+    }*/
     
     func handleDatePicker(sender: UIDatePicker) {
         var dateFormatter = NSDateFormatter()
