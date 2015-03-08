@@ -18,6 +18,8 @@ class RBLoginViewController: UIViewController
     private(set) var passwordField: RBTextField!
     private(set) var loginButton: UIButton!
     
+    private(set) var progressHud: M13ProgressHUD!
+    
     private var centerConstraint: NSLayoutConstraint!
     
     private var shouldSplash = false
@@ -99,12 +101,23 @@ class RBLoginViewController: UIViewController
     
     func submitLogin()
     {
-         ( UIApplication.sharedApplication().delegate as AppDelegate ).appLoggedIn()
+        let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
+        delegate.window?.addSubview( progressHud )
+        progressHud.status = "Logging In..."
+        progressHud.show( true )
+        
+        RBAPIManager.manager.login( usernameField.text, password: passwordField.text )
+        {
+            success in
+            
+            self.progressHud.hide( true )
+            
+            if success
+            {
+                ( UIApplication.sharedApplication().delegate as AppDelegate ).appLoggedIn()
+            }
+        }
     }
-    
-    
-    
-    
     
     override func loadView()
     {
@@ -205,6 +218,12 @@ class RBLoginViewController: UIViewController
         formBackgroundView.autoMatchDimension( ALDimension.Width, toDimension: ALDimension.Width, ofView: logoImage, withMultiplier: 1.50 )
         
         logoImage.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: formBackgroundView, withOffset: -10.0 )
+        
+        let progressRing = M13ProgressViewRing()
+        progressRing.indeterminate = true
+        progressHud = M13ProgressHUD( progressView: progressRing )
+        progressHud.progressViewSize = CGSizeMake( 100, 100 )
+        progressHud.animationPoint = CGPointMake( UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2 );
     }
     
     private func setupLoginLayout()

@@ -10,5 +10,7 @@
 #define RoboBetty_RoboBetty_Bridging_Header_h
 
 #import "PureLayout.h"
+#import "M13ProgressHUD.h"
+#import "M13ProgressViewRing.h"
 
 #endif

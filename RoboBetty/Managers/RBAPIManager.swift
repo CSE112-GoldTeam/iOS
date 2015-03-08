@@ -10,7 +10,7 @@ public let RBAPILoggedInNotificationKey  = "RoboBetty Logged In"
 public let RBAPILoggedOutNotificationKey = "RoboBetty Logged Out"
 
 private let SharedManager = RBAPIManager()
-private let URL = "http://robobetty-dev.herokuapp.com/api/m/appointment"
+private let baseURL = "http://robobetty-dev.herokuapp.com/api/m/"
 
 import Foundation
 import Alamofire
@@ -29,7 +29,12 @@ class RBAPIManager
         accessToken = NSUserDefaults.standardUserDefaults().objectForKey( "token" ) as? String
     }
     
-    
+    private func saveAccessToken( token: String )
+    {
+        accessToken = token
+        NSUserDefaults.standardUserDefaults().setObject( token, forKey: "token" )
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
     
     func isLoggedIn() -> Bool
     {
@@ -38,30 +43,92 @@ class RBAPIManager
     
     func login( username: String!, password: String!, completion: ( success: Bool ) -> () )
     {
-        accessToken = "temp"
-        NSNotificationCenter.defaultCenter().postNotificationName( RBAPILoggedInNotificationKey, object: nil )
+        //accessToken = "temp"
+        let url = "http://robobetty-dev.herokuapp.com/api/auth"
+        
+        let plainString = "\(username):\(password)" as NSString
+        let plainData = plainString.dataUsingEncoding( NSUTF8StringEncoding )
+        let base64String = plainData?.base64EncodedStringWithOptions( nil )
+        
+        let authHeader = [ "Authorization": "Basic " + base64String! ]
+        Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = authHeader
+        
+        Alamofire.request( .POST, url ).response
+        {
+            request, response, data, error in
+            
+            if error == nil
+            {
+                let str = NSString( data: data as NSData, encoding: NSUTF8StringEncoding )
+                
+                if str == "Unauthorized"
+                {
+                    completion( success: false )
+                }
+                else
+                {
+                    let json = NSJSONSerialization.JSONObjectWithData( data as NSData, options: nil, error: nil ) as? NSDictionary
+                    
+                    if json == nil
+                    {
+                        completion( success: false )
+                    }
+                    else
+                    {
+                        let token = json!.objectForKey( "api_token" ) as String
+                        self.saveAccessToken( token )
+                        completion( success: true )
+                    }
+                }
+            }
+            else
+            {
+                println( error )
+                completion( success: false )
+            }
+        }
     }
     
     func logout()
     {
         accessToken = nil
+        NSUserDefaults.standardUserDefaults().removeObjectForKey( "token" )
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    func getAppointmentInfo(fName:NSString, lName:NSString, dob:NSString, completionHandler: (responseObject: NSMutableDictionary?) -> ()){
-        Alamofire.request(.GET, URL, parameters: ["fname": fName, "lname": lName, "dob":dob], encoding: .URL).responseJSON { (_, _, JSON, _) in
-            if let jsonResult = JSON as? Array<Dictionary<String,String>> {
-                if(jsonResult.count == 0){
-                    completionHandler(responseObject: nil)
+    func getAppointmentInfo( fName: NSString, lName: NSString, dob: NSString, completionHandler: ( responseObject: NSMutableDictionary? ) -> () )
+    {
+        let url = baseURL + "appointment"
+        let parameters = [
+            "fname": fName,
+            "lname": lName,
+            "dob":   dob
+        ]
+        
+        Alamofire.request( .GET, url, parameters: parameters, encoding: .URL ).responseJSON
+        {
+            request, response, json, error in
+            
+            if let jsonResult = json as? Array<Dictionary<String,String>>
+            {
+                if jsonResult.count == 0
+                {
+                    completionHandler( responseObject: nil )
                 }
-                else{
+                else
+                {
                     var information = NSMutableDictionary()
                     let email = jsonResult[0]["email"]
                     information.setValue(fName, forKey: "fname")
                     information.setValue(lName, forKey: "lname")
                     information.setValue(dob, forKey: "dob")
                     information.setValue(email, forKey: "email")
-                    completionHandler(responseObject: information)
+                    completionHandler( responseObject: information )
                 }
+            }
+            else
+            {
+                completionHandler( responseObject: nil )
             }
         }
     }

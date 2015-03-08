@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
         if RBAPIManager.manager.isLoggedIn()
         {
-            
+            let storyboard = UIStoryboard( name: "Main", bundle: nil )
+            let mainViewController = storyboard.instantiateInitialViewController() as UIViewController
+            window?.rootViewController = mainViewController
         }
         else
         {
