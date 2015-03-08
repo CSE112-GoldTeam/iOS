@@ -75,6 +75,7 @@ class RBCheckInViewController: UIViewController
     
     @objc func didReceiveKeyboardNotification( notification: NSNotification )
     {
+        println("KEYBOARD")
         let info = notification.userInfo!
         let keyboardFrame: CGRect = ( info[UIKeyboardFrameEndUserInfoKey] as NSValue ).CGRectValue()
         let duration = info[UIKeyboardAnimationDurationUserInfoKey] as Double
@@ -248,5 +249,19 @@ class RBCheckInViewController: UIViewController
                 return
             }
         }
+    }
+    
+    @IBAction func dateField(sender: UITextField) {
+        var datePickerView  : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }
+    
+    func handleDatePicker(sender: UIDatePicker) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dobField.text = dateFormatter.stringFromDate(sender.date)
     }
 }

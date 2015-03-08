@@ -264,6 +264,9 @@
                                                 <include reference="IUL-Kd-Gye"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="dateField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="pwx-Qq-Ezb"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZv-yg-3cy">
                                         <rect key="frame" x="139.5" y="199" width="153" height="36"/>
