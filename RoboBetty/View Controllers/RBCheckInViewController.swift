@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class RBCheckInViewController: UIViewController
+class RBCheckInViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var centerBackground: UIView!
@@ -27,6 +27,7 @@ class RBCheckInViewController: UIViewController
     
     private var keyboardVisible = false
     private var manager = RBAPIManager()
+    private var selectedTextField:UITextField!
     
     override func viewDidLoad()
     {
@@ -50,6 +51,10 @@ class RBCheckInViewController: UIViewController
         datePickerView.datePickerMode = UIDatePickerMode.Date
         dobField.inputView = datePickerView
         datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+        firstNameField.delegate = self
+        lastNameField.delegate = self
+        dobField.delegate = self
     }
     
     override func viewWillAppear( animated: Bool )
@@ -89,7 +94,7 @@ class RBCheckInViewController: UIViewController
         {
             let keyboardY = keyboardFrame.origin.y
             let difference = ( 172.0 + centerBackground.frame.size.height ) - keyboardY
-                        
+            
             verticalCenterConstraint.constant = difference + 40
             ( self.navigationController as? RBNavigationController )?.hideProgressBar( true )
             
@@ -254,18 +259,52 @@ class RBCheckInViewController: UIViewController
         }
     }
     
-/*    @IBAction func dateField(sender: UITextField) {
-        println("DATE FIELD")
-        var datePickerView  : UIDatePicker = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePickerMode.Date
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
-        
-    }*/
-    
     func handleDatePicker(sender: UIDatePicker) {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         dobField.text = dateFormatter.stringFromDate(sender.date)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nextTextField(textField, next:1)
+        return false
+    }
+    
+    func nextTextField(textField:UITextField, next:Int){
+        var nextTag = textField.tag+next
+        var nextResponder = textField.superview?.viewWithTag(nextTag)
+        if((nextResponder) != nil){
+            nextResponder?.becomeFirstResponder()
+        }
+        else{
+            textField.resignFirstResponder()
+        }
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        var doneToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+        doneToolbar.barStyle = UIBarStyle.Default
+        selectedTextField = textField
+        var prev = UIBarButtonItem(title: "Previous", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("prevKeyboard:"))
+        var next = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("nextKeyboard:"))
+        var space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        var done =  UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("doneWithKeyboard:"))
+        doneToolbar.items = [prev, next, space, done]
+        
+        doneToolbar.sizeToFit()
+        textField.inputAccessoryView = doneToolbar
+        return true
+    }
+    
+    func prevKeyboard(sender:UITextField){
+        nextTextField(selectedTextField, next: -1)
+    }
+    
+    func nextKeyboard(sender:UITextField){
+        nextTextField(selectedTextField, next: 1)
+    }
+    
+    func doneWithKeyboard(sender:UITextField){
+        selectedTextField.resignFirstResponder()
     }
 }
