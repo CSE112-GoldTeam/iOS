@@ -29,6 +29,8 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
     private var manager = RBAPIManager()
     private var selectedTextField:UITextField!
     
+    private(set) var progressHud: M13ProgressHUD!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -55,6 +57,16 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         firstNameField.delegate = self
         lastNameField.delegate = self
         dobField.delegate = self
+        
+        
+        
+        
+        let progressRing = M13ProgressViewRing()
+        progressRing.indeterminate = true
+        progressHud = M13ProgressHUD( progressView: progressRing )
+        progressHud.progressViewSize = CGSizeMake( 100, 100 )
+        progressHud.animationPoint = CGPointMake( UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2 );
+
     }
     
     override func viewWillAppear( animated: Bool )
@@ -223,6 +235,16 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func nextButtonPressed()
     {
+        
+        let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
+        delegate.window?.addSubview( progressHud )
+        progressHud.status = "Checking In..."
+        progressHud.show( true )
+        
+        
+        
+        
+        
         let duration = keyboardVisible == true ? 0.3 : 0.0
         view.endEditing( true )
         
@@ -231,6 +253,10 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         var dateOfBirth = dobField.text
         
         if(fName == "" || lName == "" || dateOfBirth == ""){
+                    
+            self.progressHud.hide( true )
+                    
+
             var alert = UIAlertView(title: "ERROR: Missing Information", message: "Please Make Sure You Filled In All the Information ", delegate: self, cancelButtonTitle: "Close")
             alert.show()
         }
@@ -242,10 +268,12 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
                 self.performAfterDelay( duration, block:
                     {
                         if(responseObject == nil){
+                            self.progressHud.hide( true )
                             var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
                             alert.show()
                         }
                         else{
+                            self.progressHud.hide( true )
                             let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
                             userInfoViewController.information = responseObject
                             self.navigationController?.pushViewController( userInfoViewController, animated: true )

@@ -51,10 +51,10 @@
 		94FF8D7C1A9EE29300283B3D /* RBAdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FF8D7B1A9EE29300283B3D /* RBAdditionalInfoViewController.swift */; };
 		D308A89C1A897635000DBC63 /* DontHaveAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D308A89B1A897635000DBC63 /* DontHaveAppointmentViewController.swift */; };
 		D348057A1A89939600B97424 /* RBThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34805791A89939600B97424 /* RBThankYouViewController.swift */; };
-		D38384DF1AA83ABB00222BE2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CE1AA7D7C500222BE2 /* Alamofire.framework */; };
-		D38384E01AA83ABB00222BE2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CE1AA7D7C500222BE2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D38FD3331A9A976F009133A0 /* RBProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38FD3311A9A976F009133A0 /* RBProgressBar.swift */; };
 		F506D8081A896FBA00BA3A47 /* gold-wreath-md.png in Resources */ = {isa = PBXBuildFile; fileRef = F506D8071A896FBA00BA3A47 /* gold-wreath-md.png */; };
+		F5A707D41AACE72400C0AD8F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CC1AA7D7C500222BE2 /* Alamofire.framework */; };
+		F5A707D51AACE72400C0AD8F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D38384CC1AA7D7C500222BE2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,23 +93,23 @@
 			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
 			remoteInfo = "Alamofire OSX Tests";
 		};
-		D38384E11AA83ABB00222BE2 /* PBXContainerItemProxy */ = {
+		F5A707D61AACE72400C0AD8F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38384C41AA7D7C500222BE2 /* Alamofire.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 4DD67C0A1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D38384D71AA7D80200222BE2 /* Embed Frameworks */ = {
+		F5A707D81AACE72400C0AD8F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D38384E01AA83ABB00222BE2 /* Alamofire.framework in Embed Frameworks */,
+				F5A707D51AACE72400C0AD8F /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D38384DF1AA83ABB00222BE2 /* Alamofire.framework in Frameworks */,
+				F5A707D41AACE72400C0AD8F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,12 +445,12 @@
 				94A9A9011A80671D0090935E /* Sources */,
 				94A9A9021A80671D0090935E /* Frameworks */,
 				94A9A9031A80671D0090935E /* Resources */,
-				D38384D71AA7D80200222BE2 /* Embed Frameworks */,
+				F5A707D81AACE72400C0AD8F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D38384E21AA83ABB00222BE2 /* PBXTargetDependency */,
+				F5A707D71AACE72400C0AD8F /* PBXTargetDependency */,
 			);
 			name = RoboBetty;
 			productName = RoboBetty;
@@ -636,10 +636,10 @@
 			target = 94A9A9041A80671D0090935E /* RoboBetty */;
 			targetProxy = 94A9A91B1A80671D0090935E /* PBXContainerItemProxy */;
 		};
-		D38384E21AA83ABB00222BE2 /* PBXTargetDependency */ = {
+		F5A707D71AACE72400C0AD8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Alamofire OSX";
-			targetProxy = D38384E11AA83ABB00222BE2 /* PBXContainerItemProxy */;
+			name = "Alamofire iOS";
+			targetProxy = F5A707D61AACE72400C0AD8F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
