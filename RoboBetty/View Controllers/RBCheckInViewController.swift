@@ -242,9 +242,6 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         progressHud.show( true )
         
         
-        
-        
-        
         let duration = keyboardVisible == true ? 0.3 : 0.0
         view.endEditing( true )
         

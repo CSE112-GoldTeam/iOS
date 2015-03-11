@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="451" id="Ph6-tG-NzK">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="470"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="592" id="v6L-YU-ddo"/>
                                 </constraints>
@@ -402,8 +402,12 @@
                             <constraint firstAttribute="centerY" secondItem="uPY-xh-HfK" secondAttribute="centerY" id="5Vj-6k-2fu">
                                 <variation key="widthClass=regular" constant="20"/>
                             </constraint>
-                            <constraint firstItem="sSv-7W-hvM" firstAttribute="top" secondItem="uPY-xh-HfK" secondAttribute="bottom" constant="20" id="6FV-vz-xBy"/>
-                            <constraint firstItem="sSv-7W-hvM" firstAttribute="bottom" secondItem="neT-gu-fk6" secondAttribute="bottom" constant="-17" id="AQS-Wo-0A0"/>
+                            <constraint firstItem="sSv-7W-hvM" firstAttribute="top" secondItem="uPY-xh-HfK" secondAttribute="bottom" constant="20" id="6FV-vz-xBy">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="sSv-7W-hvM" firstAttribute="bottom" secondItem="neT-gu-fk6" secondAttribute="bottom" constant="-17" id="AQS-Wo-0A0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-17"/>
+                            </constraint>
                             <constraint firstItem="uPY-xh-HfK" firstAttribute="centerX" secondItem="neT-gu-fk6" secondAttribute="centerX" id="CLV-ZS-h4h"/>
                             <constraint firstAttribute="centerX" secondItem="VvJ-PS-itj" secondAttribute="centerX" id="JBW-MR-hak">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
