@@ -105,6 +105,8 @@ class RBLoginViewController: UIViewController
         delegate.window?.addSubview( progressHud )
         progressHud.status = "Logging In..."
         progressHud.show( true )
+        progressHud.indeterminate = true
+        view.endEditing( true )
         
         RBAPIManager.manager.login( usernameField.text, password: passwordField.text )
         {

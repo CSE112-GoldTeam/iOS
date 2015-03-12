@@ -236,7 +236,7 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         delegate.window?.addSubview( progressHud )
         progressHud.status = "Checking In..."
         progressHud.show( true )
-        
+        progressHud.indeterminate = true
         
         let duration = keyboardVisible == true ? 0.3 : 0.0
         view.endEditing( true )
