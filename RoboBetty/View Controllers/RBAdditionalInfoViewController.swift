@@ -33,6 +33,8 @@ class RBAdditionalInfoViewController: UIViewController
         ]
     ]
     
+    var appointmentID: String?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -65,6 +67,15 @@ class RBAdditionalInfoViewController: UIViewController
     @IBAction func nextButtonPressed()
     {
         performSegueWithIdentifier( "signature", sender: nil )
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "signature"
+        {
+            let dest = segue.destinationViewController as RBSignatureViewController
+            dest.appointmentID = appointmentID
+        }
     }
     
     private func setupScrollViewForm()

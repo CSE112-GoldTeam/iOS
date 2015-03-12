@@ -119,10 +119,13 @@ class RBAPIManager
                 {
                     var information = NSMutableDictionary()
                     let email = jsonResult[0]["email"]
+                    let apptID = jsonResult[0]["_id"]
+                    NSLog( "%@", jsonResult[0] as NSDictionary )
                     information.setValue(fName, forKey: "fname")
                     information.setValue(lName, forKey: "lname")
                     information.setValue(dob, forKey: "dob")
                     information.setValue(email, forKey: "email")
+                    information.setValue(apptID, forKey: "appointmentID")
                     completionHandler( responseObject: information )
                 }
             }
@@ -133,4 +136,12 @@ class RBAPIManager
         }
     }
     
+    func sendSignature( signature: String, forAppointmentID appointmentID: String, completion: ( success: Bool ) -> () )
+    {
+        var dispatchTime: dispatch_time_t = dispatch_time( DISPATCH_TIME_NOW, Int64( 3 * Double( NSEC_PER_SEC ) ) )
+        dispatch_after( dispatchTime, dispatch_get_main_queue(),
+        {
+            completion( success: true )
+        })
+    }
 }

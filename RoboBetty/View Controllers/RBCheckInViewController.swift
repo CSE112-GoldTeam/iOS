@@ -58,9 +58,6 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         lastNameField.delegate = self
         dobField.delegate = self
         
-        
-        
-        
         let progressRing = M13ProgressViewRing()
         progressRing.indeterminate = true
         progressHud = M13ProgressHUD( progressView: progressRing )
@@ -235,7 +232,6 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func nextButtonPressed()
     {
-        
         let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
         delegate.window?.addSubview( progressHud )
         progressHud.status = "Checking In..."
@@ -249,37 +245,42 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         var lName = lastNameField.text
         var dateOfBirth = dobField.text
         
-        if(fName == "" || lName == "" || dateOfBirth == ""){
-                    
+        if(fName == "" || lName == "" || dateOfBirth == "")
+        {
             self.progressHud.hide( true )
-                    
 
             var alert = UIAlertView(title: "ERROR: Missing Information", message: "Please Make Sure You Filled In All the Information ", delegate: self, cancelButtonTitle: "Close")
             alert.show()
         }
-        else{
+        else
+        {
             var capitalFirstName = fName.substringToIndex(advance(fName.startIndex, 1)).uppercaseString.stringByAppendingString(fName.substringFromIndex(advance(fName.startIndex, 1)))
             var capitalLastName = lName.substringToIndex(advance(lName.startIndex, 1)).uppercaseString.stringByAppendingString(lName.substringFromIndex(advance(lName.startIndex, 1)))
             
-            manager.getAppointmentInfo(capitalFirstName, lName: capitalLastName, dob: dateOfBirth) { responseObject in
+            manager.getAppointmentInfo(capitalFirstName, lName: capitalLastName, dob: dateOfBirth)
+            {
+                responseObject in
+                
                 self.performAfterDelay( duration, block:
+                {
+                    self.progressHud.hide( true )
+                    
+                    if(responseObject == nil)
                     {
-                        if(responseObject == nil){
-                            self.progressHud.hide( true )
-                            var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
-                            alert.show()
-                        }
-                        else{
-                            self.progressHud.hide( true )
-                            let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
-                            userInfoViewController.information = responseObject
-                            self.navigationController?.pushViewController( userInfoViewController, animated: true )
-                        }
-                        self.firstNameField.text = ""
-                        self.lastNameField.text = ""
-                        self.dobField.text = ""
+                        var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
+                        alert.show()
+                    }
+                    else
+                    {
+                        let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+                        userInfoViewController.information = responseObject
+                        self.navigationController?.pushViewController( userInfoViewController, animated: true )
+                    }
+                    
+                    self.firstNameField.text = ""
+                    self.lastNameField.text = ""
+                    self.dobField.text = ""
                 })
-                return
             }
         }
     }

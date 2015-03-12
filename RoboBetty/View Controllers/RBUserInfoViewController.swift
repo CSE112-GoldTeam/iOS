@@ -22,7 +22,7 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
     var dateOfBirth:NSString!
     var email:NSString!
     var information:NSMutableDictionary!
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -56,6 +56,15 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
     @IBAction func nextButtonPressed()
     {
         performSegueWithIdentifier( "moreInfo", sender: nil )
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "moreInfo"
+        {
+            let dest = segue.destinationViewController as RBAdditionalInfoViewController
+            dest.appointmentID = information.valueForKey( "appointmentID" ) as? String
+        }
     }
     
     override func viewWillDisappear( animated: Bool )
