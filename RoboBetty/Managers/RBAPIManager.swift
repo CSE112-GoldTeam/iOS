@@ -52,8 +52,9 @@ class RBAPIManager
         
         let authHeader = [ "Authorization": "Basic " + base64String! ]
         Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = authHeader
+        let parameters = [ "name": "Frodo" ]
         
-        Alamofire.request( .POST, url ).response
+        Alamofire.request( .POST, url, parameters: parameters ).response
         {
             request, response, data, error in
             
