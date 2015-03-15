@@ -14,6 +14,7 @@ class RBAdditionalInfoViewController: UIViewController
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    private var manager = RBAPIManager()
     private var formFields = [
         [
             "title": "Gender",
@@ -50,6 +51,31 @@ class RBAdditionalInfoViewController: UIViewController
         backButton.layer.borderColor = UIColor.whiteColor().CGColor
         backButton.layer.borderWidth = 1
     }
+    
+    /*func getForms(){
+        manager.getCustomForms("")
+        {
+            responseObject in
+            var fields: NSMutableArray;()
+            fields = responseObject!
+            for field in fields{
+                fieldGenerator(field["type"], label: field["label"], options: field["options"])
+            }
+            
+        }
+    }
+    
+    func fieldGenerator(type:NSString, label:NSString, options:NSMutableArray){
+        if(type == "textfield"){
+            //create a textfield with the label
+        }
+        else if(type == "dropdown"){
+            
+        }
+        else{
+            println("error")
+        }
+    }*/
     
     override func viewWillAppear( animated: Bool )
     {
