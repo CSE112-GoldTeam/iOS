@@ -337,8 +337,8 @@
 			children = (
 				947F7EF71A8B00870031D7D4 /* RBLoginViewController.swift */,
 				94FF8D751A9D2DD100283B3D /* RBNavigationController.swift */,
-				94A9A90C1A80671D0090935E /* RBCheckInViewController.swift */,
 				7F65BBC71A898158002A0BC4 /* RBUserInfoViewController.swift */,
+				94A9A90C1A80671D0090935E /* RBCheckInViewController.swift */,
 				94FF8D7B1A9EE29300283B3D /* RBAdditionalInfoViewController.swift */,
 				94109B041A9EFAA100AAFA6D /* RBSignatureViewController.swift */,
 				D34805791A89939600B97424 /* RBThankYouViewController.swift */,

@@ -52,30 +52,15 @@ class RBAdditionalInfoViewController: UIViewController
         backButton.layer.borderWidth = 1
     }
     
-    /*func getForms(){
-        manager.getCustomForms("")
+    func getForms(){
+        manager.getCustomForms()
         {
             responseObject in
-            var fields: NSMutableArray;()
-            fields = responseObject!
-            for field in fields{
-                fieldGenerator(field["type"], label: field["label"], options: field["options"])
-            }
-            
+            var fields = responseObject
+            //self.formFields = responseObject!
         }
     }
-    
-    func fieldGenerator(type:NSString, label:NSString, options:NSMutableArray){
-        if(type == "textfield"){
-            //create a textfield with the label
-        }
-        else if(type == "dropdown"){
-            
-        }
-        else{
-            println("error")
-        }
-    }*/
+
     
     override func viewWillAppear( animated: Bool )
     {
@@ -135,9 +120,9 @@ class RBAdditionalInfoViewController: UIViewController
                 
                 runningSize += 30 + separationSpace
             }
-            else if form["type"] as String == "choice"
+            else if form["type"] as String == "dropdown"
             {
-                let choices = form["choices"] as [String]
+                let choices = form["options"] as [String]
                 let segmentedControl = UISegmentedControl( items: choices )
                 segmentedControl.tintColor = UIColor.whiteColor()
                 let attributes = [ NSFontAttributeName : RBConstants.primaryFont( 15.0 ) ]
