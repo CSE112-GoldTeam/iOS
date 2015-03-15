@@ -245,6 +245,8 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         var lName = lastNameField.text
         var dateOfBirth = dobField.text
         
+        self.getForms()
+        
         if(fName == "" || lName == "" || dateOfBirth == "")
         {
             self.progressHud.hide( true )
@@ -285,6 +287,16 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         }
     }
     
+    func getForms(){
+        manager.getCustomForms("")
+        {
+            responseObject in
+            var fields: NSMutableArray;()
+            fields = responseObject!
+            println(fields.description)
+        }
+    }
+
     func handleDatePicker(sender: UIDatePicker) {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"

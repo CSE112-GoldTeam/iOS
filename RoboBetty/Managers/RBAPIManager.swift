@@ -156,10 +156,9 @@ class RBAPIManager
     
     func getCustomForms(id:NSString, completionHandler: (responseObject: NSMutableArray? ) -> () )
     {
-        let url = baseURL + "form"
-        let param = ["id": id]
+        let url = baseURL + "form/"
         
-        Alamofire.request(.GET, url, parameters: param, encoding: .URL).responseJSON
+        Alamofire.request(.GET, url).responseJSON
             {
                 request, response, json, error in
                 if let jsonResult = json as? Array<Dictionary<String,NSMutableArray>>
