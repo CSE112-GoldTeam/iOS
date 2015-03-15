@@ -235,7 +235,7 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
         delegate.window?.addSubview( progressHud )
         progressHud.status = "Checking In..."
-        progressHud.show( true )
+        //progressHud.show( true )
         progressHud.indeterminate = true
         
         let duration = keyboardVisible == true ? 0.3 : 0.0
@@ -244,6 +244,8 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         var fName = firstNameField.text
         var lName = lastNameField.text
         var dateOfBirth = dobField.text
+        
+        self.getForms()
         
         if(fName == "" || lName == "" || dateOfBirth == "")
         {
@@ -257,34 +259,54 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
             var capitalFirstName = fName.substringToIndex(advance(fName.startIndex, 1)).uppercaseString.stringByAppendingString(fName.substringFromIndex(advance(fName.startIndex, 1)))
             var capitalLastName = lName.substringToIndex(advance(lName.startIndex, 1)).uppercaseString.stringByAppendingString(lName.substringFromIndex(advance(lName.startIndex, 1)))
             
-            manager.getAppointmentInfo(capitalFirstName, lName: capitalLastName, dob: dateOfBirth)
-            {
-                responseObject in
-                
-                self.performAfterDelay( duration, block:
-                {
-                    self.progressHud.hide( true )
-                    
-                    if(responseObject == nil)
-                    {
-                        var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
-                        alert.show()
-                    }
-                    else
-                    {
-                        let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
-                        userInfoViewController.information = responseObject
-                        self.navigationController?.pushViewController( userInfoViewController, animated: true )
-                    }
-                    
-                    self.firstNameField.text = ""
-                    self.lastNameField.text = ""
-                    self.dobField.text = ""
-                })
-            }
+            let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+            var data = [
+                "fname": "hi",
+                "lname": "adsf",
+                "dob": "ssdf",
+                "email":"slkdjf"
+            ]
+            userInfoViewController.information = data as NSDictionary
+            self.navigationController?.pushViewController( userInfoViewController, animated: true )
+            
+//            manager.getAppointmentInfo(capitalFirstName, lName: capitalLastName, dob: dateOfBirth)
+//            {
+//                responseObject in
+//                
+//                self.performAfterDelay( duration, block:
+//                {
+//                    self.progressHud.hide( true )
+//                    
+//                    if(responseObject == nil)
+//                    {
+//                        var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
+//                        alert.show()
+//                    }
+//                    else
+//                    {
+//                        let userInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier( "confirmUser" ) as RBUserInfoViewController
+//                        userInfoViewController.information = responseObject
+//                        self.navigationController?.pushViewController( userInfoViewController, animated: true )
+//                    }
+//                    
+//                    self.firstNameField.text = ""
+//                    self.lastNameField.text = ""
+//                    self.dobField.text = ""
+//                })
+//            }
         }
     }
     
+    func getForms(){
+        manager.getCustomForms("")
+        {
+            responseObject in
+            var fields: NSMutableArray;()
+            fields = responseObject!
+            println(fields.description)
+        }
+    }
+
     func handleDatePicker(sender: UIDatePicker) {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"

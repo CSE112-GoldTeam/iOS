@@ -21,7 +21,7 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
     var lastName:NSString!
     var dateOfBirth:NSString!
     var email:NSString!
-    var information:NSMutableDictionary!
+    var information:NSDictionary!
     
     override func viewDidLoad()
     {
