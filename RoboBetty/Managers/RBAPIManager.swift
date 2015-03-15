@@ -83,7 +83,7 @@ class RBAPIManager
                         let plainData = plainString.dataUsingEncoding( NSUTF8StringEncoding )
                         let base64String = plainData?.base64EncodedStringWithOptions( nil )
                         
-                        let authHeader = [ "Authorization": "Basic " + base64String! ]
+                        let authHeader = [ "Authorization": "Token " + base64String! ]
                         Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = authHeader
                         
                         completion( success: true )
