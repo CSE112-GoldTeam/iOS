@@ -245,7 +245,8 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         var lName = lastNameField.text
         var dateOfBirth = dobField.text
         
-        self.getForms()
+        //manager.setState("roomed")
+        //self.getForms()
         
         if(fName == "" || lName == "" || dateOfBirth == "")
         {
@@ -284,16 +285,6 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
                     self.dobField.text = ""
                 })
             }
-        }
-    }
-    
-    func getForms(){
-        manager.getCustomForms("")
-        {
-            responseObject in
-            var fields: NSMutableArray;()
-            fields = responseObject!
-            println(fields.description)
         }
     }
 

@@ -162,18 +162,33 @@ class RBAPIManager
         })
     }
     
-    func getCustomForms(id:NSString, completionHandler: (responseObject: NSMutableArray? ) -> () )
+    func getCustomForms(completionHandler: (responseObject: NSMutableArray? ) -> () )
     {
         let url = baseURL + "form/"
         
         Alamofire.request(.GET, url).responseJSON
             {
                 request, response, json, error in
-                if let jsonResult = json as? Array<Dictionary<String,NSMutableArray>>
+                if let jsonResult = json as? Dictionary<String,NSMutableArray>
                 {
-                    var fields = jsonResult[0]["fields"]
+                    var fields: NSMutableArray? = jsonResult["fields"]
                     completionHandler(responseObject: fields)
                 }
         }
     }
+    
+    
+    /*func setState(state:String){
+        
+        let url = baseURL + state
+        
+        Alamofire.request(.PUT, url).responseJSON{
+             request, response, json, error in
+             println(response)
+            
+        }
+        
+        
+    }*/
+    
 }
