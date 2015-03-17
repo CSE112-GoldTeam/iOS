@@ -27,6 +27,12 @@ class RBAPIManager
     init()
     {
         accessToken = NSUserDefaults.standardUserDefaults().objectForKey( "token" ) as? String
+        
+        if accessToken != nil
+        {
+            let authHeader = [ "Authorization": "Token " + accessToken! ]
+            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = authHeader
+        }
     }
     
     private func saveAccessToken( token: String )
@@ -118,7 +124,7 @@ class RBAPIManager
         {
             request, response, json, error in
             
-            if let jsonResult = json as? Array<Dictionary<String,String>>
+            if let jsonResult = json as? NSDictionary
             {
                 if jsonResult.count == 0
                 {
@@ -127,9 +133,11 @@ class RBAPIManager
                 else
                 {
                     var information = NSMutableDictionary()
-                    let email = jsonResult[0]["email"]
-                    let apptID = jsonResult[0]["_id"]
-                    NSLog( "%@", jsonResult[0] as NSDictionary )
+                    let email = jsonResult.objectForKey("email") as String
+                    let apptID = jsonResult.objectForKey("_id") as String
+                    let fName = jsonResult.objectForKey("fname") as String
+                    let lName = jsonResult.objectForKey("lname") as String
+                    let dob = jsonResult.objectForKey("dob") as String
                     information.setValue(fName, forKey: "fname")
                     information.setValue(lName, forKey: "lname")
                     information.setValue(dob, forKey: "dob")
