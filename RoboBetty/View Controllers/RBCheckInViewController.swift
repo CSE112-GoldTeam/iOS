@@ -245,14 +245,11 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         var lName = lastNameField.text
         var dateOfBirth = dobField.text
         
-        //manager.setState("roomed")
-        //self.getForms()
-        
         if(fName == "" || lName == "" || dateOfBirth == "")
         {
             self.progressHud.hide( true )
 
-            var alert = UIAlertView(title: "ERROR: Missing Information", message: "Please Make Sure You Filled In All the Information ", delegate: self, cancelButtonTitle: "Close")
+            var alert = UIAlertView(title: "Missing Information!", message: "Please Make Sure You Filled In All the Information ", delegate: self, cancelButtonTitle: "Close")
             alert.show()
         }
         else
@@ -270,7 +267,7 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
                     
                     if(responseObject == nil)
                     {
-                        var alert = UIAlertView(title: "ERROR: Appointment Not Found", message: "Please Make Sure You Entered the Correct Information ", delegate: self, cancelButtonTitle: "Close")
+                        var alert = UIAlertView(title: "Appointment Not Found!", message: "Please Make Sure You Entered the Correct Information", delegate: self, cancelButtonTitle: "Close")
                         alert.show()
                     }
                     else
