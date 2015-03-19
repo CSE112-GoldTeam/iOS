@@ -143,6 +143,15 @@ class RBAPIManager
                     information.setValue(dob, forKey: "dob")
                     information.setValue(email, forKey: "email")
                     information.setValue(apptID, forKey: "appointmentID")
+                    
+                    let dateString = jsonResult.objectForKey("date") as String
+                    let removedT = dateString.stringByReplacingOccurrencesOfString("T", withString: " ", options: nil, range: nil)
+                    let removedTrailing = removedT.stringByReplacingOccurrencesOfString(":00.000Z", withString: "", options: nil, range: nil)
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+                    let date = dateFormatter.dateFromString(removedTrailing)
+                    information.setValue(date, forKey: "date")
+                    
                     completionHandler( responseObject: information )
                 }
             }
@@ -162,18 +171,22 @@ class RBAPIManager
         })
     }
     
-    func getCustomForms(completionHandler: (responseObject: NSMutableArray? ) -> () )
+    func getCustomForms(completionHandler: (responseObject: NSDictionary? ) -> () )
     {
-        let url = baseURL + "form/"
+        let url = baseURL + "form"
         
         Alamofire.request(.GET, url).responseJSON
+        {
+            request, response, json, error in
+            
+            if let jsonResult = json as? NSArray
             {
-                request, response, json, error in
-                if let jsonResult = json as? Dictionary<String,NSMutableArray>
+                if let obj = jsonResult.objectAtIndex( 0 ) as? NSDictionary
                 {
-                    var fields: NSMutableArray? = jsonResult["fields"]
-                    completionHandler(responseObject: fields)
+                    //var fields = obj.objectForKey("fields") as? NSArray
+                    completionHandler(responseObject: obj)
                 }
+            }
         }
     }
     

@@ -63,7 +63,16 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         progressHud = M13ProgressHUD( progressView: progressRing )
         progressHud.progressViewSize = CGSizeMake( 100, 100 )
         progressHud.animationPoint = CGPointMake( UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2 );
-
+        
+        ( self.navigationController as? RBNavigationController )?.startOverButton.addTarget(self, action: "startOver", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    @objc func startOver()
+    {
+        ( self.navigationController as? RBNavigationController )?.hideProgressBar( true )
+        ( self.navigationController as? RBNavigationController )?.progressBar.setCurrentStep( 0, animated: true )
+        ( self.navigationController as? RBNavigationController )?.hideStartOverButton()
+        showCheckin()
     }
     
     override func viewWillAppear( animated: Bool )
@@ -129,11 +138,16 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
     {
         ( self.navigationController as? RBNavigationController )?.showProgressBar( true )
         ( self.navigationController as? RBNavigationController )?.progressBar.setCurrentStep( 1, animated: true )
+        ( self.navigationController as? RBNavigationController )?.showStartOverButton()
         showForm()
     }
     
     private func showCheckin()
     {
+        firstNameField.text = ""
+        lastNameField.text = ""
+        dobField.text = ""
+        
         checkinView.hidden = false
         removeFormAndCheckinConstraints()
         
@@ -212,6 +226,7 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
         {
             ( self.navigationController as? RBNavigationController )?.hideProgressBar( true )
             ( self.navigationController as? RBNavigationController )?.progressBar.setCurrentStep( 0, animated: true )
+            ( self.navigationController as? RBNavigationController )?.hideStartOverButton()
             self.showCheckin()
         })
     }
@@ -234,7 +249,7 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
     {
         let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
         delegate.window?.addSubview( progressHud )
-        progressHud.status = "Checking In..."
+        progressHud.status = "Looking you up..."
         progressHud.show( true )
         progressHud.indeterminate = true
         
@@ -265,7 +280,7 @@ class RBCheckInViewController: UIViewController, UITextFieldDelegate
                 {
                     self.progressHud.hide( true )
                     
-                    if(responseObject == nil)
+                    if responseObject == nil
                     {
                         var alert = UIAlertView(title: "Appointment Not Found!", message: "Please Make Sure You Entered the Correct Information", delegate: self, cancelButtonTitle: "Close")
                         alert.show()

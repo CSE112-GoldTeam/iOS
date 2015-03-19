@@ -13,10 +13,12 @@ class RBNavigationController: UINavigationController, UINavigationControllerDele
     private(set) var backgroundImageView: UIImageView!
     private(set) var progressBar: RBProgressBar!
     private(set) var logoImage: UIImageView!
+    private(set) var startOverButton: UIButton!
     
     private var progressBarVisible = false
     
     var progressBarConstraint: NSLayoutConstraint!
+    var startOverButtonConstraint: NSLayoutConstraint!
     
     override func viewDidLoad()
     {
@@ -80,6 +82,35 @@ class RBNavigationController: UINavigationController, UINavigationControllerDele
         return manager
     }
     
+    @objc func startOver()
+    {
+        self.popToRootViewControllerAnimated(true)
+    }
+    
+    func showStartOverButton()
+    {
+        view.removeConstraint(startOverButtonConstraint)
+        startOverButtonConstraint = startOverButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 10.0)
+        
+        UIView.animateWithDuration( 0.3, animations:
+        {
+            self.view.setNeedsUpdateConstraints()
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func hideStartOverButton()
+    {
+        view.removeConstraint(startOverButtonConstraint)
+        startOverButtonConstraint = startOverButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: view, withOffset: 10)
+        
+        UIView.animateWithDuration( 0.3, animations:
+        {
+            self.view.setNeedsUpdateConstraints()
+            self.view.layoutIfNeeded()
+        })
+    }
+    
     private func setupViews()
     {
         backgroundImageView = UIImageView()
@@ -104,6 +135,19 @@ class RBNavigationController: UINavigationController, UINavigationControllerDele
         progressBarConstraint = progressBar.autoPinEdge( ALEdge.Bottom, toEdge: ALEdge.Top, ofView: view, withOffset: -10 )
         progressBar.autoSetDimension( ALDimension.Height, toSize: 25 )
         progressBar.autoSetDimension( ALDimension.Width, toSize: 600 )
+        
+        startOverButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        startOverButton.setTitle("Start Over", forState: UIControlState.Normal)
+        startOverButton.backgroundColor = UIColor.grayColor()
+        startOverButton.layer.borderWidth = 1
+        startOverButton.layer.borderColor = UIColor.whiteColor().CGColor
+        startOverButton.titleLabel?.font = RBConstants.primaryFont(17.0)
+        startOverButton.showsTouchWhenHighlighted = true
+        startOverButton.addTarget(self, action: "startOver", forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(startOverButton)
+        startOverButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        startOverButtonConstraint = startOverButton.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: view, withOffset: 10)
+        startOverButton.autoSetDimensionsToSize(CGSizeMake(150.0, 40.0))
         
         let completionLabel = UILabel()
         completionLabel.text = "Your checkin completion:"

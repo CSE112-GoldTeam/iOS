@@ -16,11 +16,15 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dobLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
+    @IBOutlet weak var appointmentLabel: UILabel!
+    
+    var progressHud: M13ProgressHUD!
     
     var firstName:NSString!
     var lastName:NSString!
     var dateOfBirth:NSString!
     var email:NSString!
+    var appointmentTime:NSString!
     var information:NSDictionary!
     
     override func viewDidLoad()
@@ -40,10 +44,22 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
         dateOfBirth = information.valueForKey("dob") as NSString
         email = information.valueForKey("email") as NSString
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        let date = information.valueForKey("date") as NSDate
+        appointmentTime = dateFormatter.stringFromDate(date)
+        
         hiLabel.text = "Hi, " + firstName
         nameLabel.text = firstName + " " + lastName
         dobLabel.text = dateOfBirth
         emailLabel.text = email
+        appointmentLabel.text = "Appointment Time: \(appointmentTime)"
+        
+        let progressRing = M13ProgressViewRing()
+        progressRing.indeterminate = true
+        progressHud = M13ProgressHUD( progressView: progressRing )
+        progressHud.progressViewSize = CGSizeMake( 100, 100 )
+        progressHud.animationPoint = CGPointMake( UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2 );
     }
     
     override func viewWillAppear( animated: Bool )
@@ -55,7 +71,18 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
     
     @IBAction func nextButtonPressed()
     {
-        performSegueWithIdentifier( "moreInfo", sender: nil )
+        let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
+        delegate.window?.addSubview( progressHud )
+        progressHud.status = "Getting your forms..."
+        progressHud.show( true )
+        progressHud.indeterminate = true
+        
+        RBAPIManager.manager.getCustomForms()
+        {
+            responseObject in
+            self.performSegueWithIdentifier( "moreInfo", sender: responseObject )
+            self.progressHud.hide( true )
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -63,7 +90,8 @@ class RBUserInfoViewController: UIViewController, UINavigationBarDelegate
         if segue.identifier == "moreInfo"
         {
             let dest = segue.destinationViewController as RBAdditionalInfoViewController
-            dest.appointmentID = information.valueForKey( "appointmentID" ) as? String
+            dest.appointmentID = ( sender as? NSDictionary )?.objectForKey( "_id" ) as? String
+            dest.formFields = ( sender as? NSDictionary )?.objectForKey("fields") as? NSArray
         }
     }
     

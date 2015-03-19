@@ -15,24 +15,7 @@ class RBAdditionalInfoViewController: UIViewController
     @IBOutlet weak var nextButton: UIButton!
     
     private var manager = RBAPIManager()
-    private var formFields = [
-        [
-            "title": "Gender",
-            "type": "choice",
-            "choices": [
-                "Male",
-                "Female"
-            ]
-        ],
-        [
-            "title": "Email Address",
-            "type" : "text"
-        ],
-        [
-            "title": "Favorite Color",
-            "type": "text"
-        ]
-    ]
+    var formFields: NSArray?
     
     var appointmentID: String?
     
@@ -51,16 +34,6 @@ class RBAdditionalInfoViewController: UIViewController
         backButton.layer.borderColor = UIColor.whiteColor().CGColor
         backButton.layer.borderWidth = 1
     }
-    
-    func getForms(){
-        manager.getCustomForms()
-        {
-            responseObject in
-            var fields = responseObject
-            //self.formFields = responseObject!
-        }
-    }
-
     
     override func viewWillAppear( animated: Bool )
     {
@@ -106,15 +79,15 @@ class RBAdditionalInfoViewController: UIViewController
         
         runningSize += detailLabel.frame.size.height + separationSpace + 10
                 
-        for form in formFields
+        for form in formFields as Array<NSDictionary>
         {
-            if form["type"] as String == "text"
+            if form["type"] as String == "textfield"
             {
                 let textField = RBTextField()
                 textField.backgroundColor = UIColor.whiteColor()
                 textField.borderStyle = UITextBorderStyle.None
                 textField.font = RBConstants.primaryFont( 16.0 )
-                textField.placeholder = form["title"] as? String
+                textField.placeholder = form["label"] as? String
                 textField.frame = CGRectMake( 15, runningSize, 550, 30 )
                 formScrollView.addSubview( textField )
                 
