@@ -104,7 +104,8 @@ class RBSignatureViewController: UIViewController
         view.endEditing( true )
         let delegate = UIApplication.sharedApplication().delegate? as AppDelegate
         delegate.window?.addSubview( progressHud )
-        progressHud.status = "Checking In..."
+        progressHud.status = "Checking You In..."
+        progressHud.indeterminate = true
         progressHud.show( true )
         
         RBAPIManager.manager.sendSignature( "Bullshit", forAppointmentID: appointmentID!, completion:

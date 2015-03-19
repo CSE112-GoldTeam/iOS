@@ -14,6 +14,8 @@ class RBAdditionalInfoViewController: UIViewController
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    var doneToolbar: UIToolbar!
+    
     private var manager = RBAPIManager()
     var formFields: NSArray?
     
@@ -22,6 +24,13 @@ class RBAdditionalInfoViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        doneToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+        doneToolbar.barStyle = UIBarStyle.Default
+        var space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        var done =  UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("doneWithKeyboard"))
+        doneToolbar.items = [space, done]
+        doneToolbar.sizeToFit()
         
         setupScrollViewForm()
         
@@ -33,6 +42,16 @@ class RBAdditionalInfoViewController: UIViewController
         backButton.layer.masksToBounds = true
         backButton.layer.borderColor = UIColor.whiteColor().CGColor
         backButton.layer.borderWidth = 1
+    }
+    
+    @objc func doneWithKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        super.touchesBegan(touches, withEvent: event)
+        view.endEditing(true)
     }
     
     override func viewWillAppear( animated: Bool )
@@ -89,6 +108,7 @@ class RBAdditionalInfoViewController: UIViewController
                 textField.font = RBConstants.primaryFont( 16.0 )
                 textField.placeholder = form["label"] as? String
                 textField.frame = CGRectMake( 15, runningSize, 550, 30 )
+                textField.inputAccessoryView = doneToolbar
                 formScrollView.addSubview( textField )
                 
                 runningSize += 30 + separationSpace

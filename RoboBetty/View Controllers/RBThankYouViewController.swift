@@ -21,6 +21,8 @@ class RBThankYouViewController: UIViewController
     {
         super.viewDidLoad()
         
+        ( self.navigationController as? RBNavigationController )?.hideStartOverButton()
+        
         okButton.backgroundColor = UIColor.grayColor()
         okButton.layer.borderColor = UIColor.whiteColor().CGColor
         okButton.layer.borderWidth = 1
